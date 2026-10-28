@@ -76,7 +76,7 @@
                 radial-gradient(at 50% 100%, rgba(225, 29, 72, 0.25) 0px, transparent 50%) !important;
         }
 
-        /* Subtle Straight Card Hover */
+        /* Straight Card Hover */
         .straight-card {
             transition: transform 0.25s ease, box-shadow 0.25s ease !important;
         }
@@ -87,6 +87,16 @@
             .straight-card:hover {
                 transform: translateY(-4px) !important;
             }
+        }
+
+        /* Mobile Animated Red Glow Tabs */
+        .mobile-tab-item {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-tab-item:active {
+            transform: scale(0.97);
+            border-color: #DC2626 !important;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.4) !important;
         }
     </style>
 </head>
@@ -114,7 +124,7 @@
     </div>
 
     <!-- CLEAN & SPACIOUS MAIN NAVBAR -->
-    <header class="sticky top-0 z-40 bg-white dark:bg-[#0B0F17] border-b border-slate-200 dark:border-white/10 shadow-sm transition-colors">
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-sm transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20">
                 
@@ -163,23 +173,99 @@
                     <button id="themeToggleMobile" type="button" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-yellow-400 flex items-center justify-center text-sm">
                         <i id="themeIconMobile" class="fa-solid fa-moon"></i>
                     </button>
-                    <button id="mobileMenuBtn" class="text-2xl text-slate-800 dark:text-white p-1">
+                    <button id="mobileMenuBtn" aria-label="Toggle Mobile Menu" class="text-2xl text-slate-800 dark:text-white p-1 focus:outline-none">
                         <i id="menuIcon" class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Drawer -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-[#0B0F17] border-t border-slate-200 dark:border-white/10 px-6 py-4 space-y-2.5 font-bold text-sm text-slate-800 dark:text-slate-200 shadow-xl">
-            <a href="#" class="block py-1.5 text-red-600">Home</a>
-            <a href="#about" class="block py-1.5 border-b border-slate-100 dark:border-white/5">About Academy</a>
-            <a href="#programs" class="block py-1.5 border-b border-slate-100 dark:border-white/5">Academic Wings</a>
-            <a href="#structure" class="block py-1.5 border-b border-slate-100 dark:border-white/5">Fee & Timings</a>
-            <a href="#gallery" class="block py-1.5 border-b border-slate-100 dark:border-white/5">Campus Gallery</a>
-            <a href="#map" class="block py-1.5 border-b border-slate-100 dark:border-white/5">Campus Location Map</a>
-            <a href="#faqs" class="block py-1.5 border-b border-slate-100 dark:border-white/5">FAQs</a>
-            <a href="#admission" class="block text-center bg-red-600 text-white py-2.5 rounded-xl font-bold mt-2 shadow-md">Apply Online Now</a>
+        <!-- ================= ADVANCED RED GLOWING ANIMATED MOBILE DRAWER ================= -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-2xl border-t border-slate-200 dark:border-white/10 px-4 py-4 space-y-2 shadow-2xl transition-all duration-300 max-h-[82vh] overflow-y-auto">
+            
+            <!-- Tab 1: Home -->
+            <a href="#" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-red-50/80 dark:bg-red-950/30 border border-red-300 dark:border-red-900/60 shadow-[0_0_12px_rgba(220,38,38,0.15)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-xs shadow-sm">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <span class="font-extrabold text-xs text-red-600 dark:text-red-400">Home</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-red-500"></i>
+            </a>
+
+            <!-- Tab 2: About Academy -->
+            <a href="#about" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">About Academy</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+            </a>
+
+            <!-- Tab 3: Academic Wings -->
+            <a href="#programs" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Academic Wings</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+            </a>
+
+            <!-- Tab 4: Fee & Timings -->
+            <a href="#structure" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Fee & Timings</span>
+                </div>
+                <span class="flex items-center gap-1.5 text-[10px] font-bold text-red-600 bg-red-100 dark:bg-red-950/60 px-2 py-0.5 rounded-full">
+                    View <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                </span>
+            </a>
+
+            <!-- Tab 5: Campus Gallery -->
+            <a href="#gallery" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Campus Gallery</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+            </a>
+
+            <!-- Tab 6: Campus Location Map -->
+            <a href="#map" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Campus Location Map</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+            </a>
+
+            <!-- Tab 7: FAQs -->
+            <a href="#faqs" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Frequently Asked Questions</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+            </a>
+
+            <!-- Big Glowing Apply Online Button -->
+            <a href="#admission" class="mobile-nav-link block text-center bg-gradient-to-r from-red-600 to-rose-600 text-white py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-[0_4px_20px_rgba(220,38,38,0.4)] active:scale-95 transition mt-3">
+                <i class="fa-solid fa-graduation-cap mr-1.5"></i> Apply Online Now
+            </a>
         </div>
     </header>
 
@@ -229,7 +315,7 @@
                     </div>
                 </div>
 
-                <!-- STRAIGHT & CLEAN HERO IMAGE CARD (NO DISTORTION) -->
+                <!-- STRAIGHT & CLEAN HERO IMAGE CARD -->
                 <div class="lg:col-span-5 relative" data-aos="zoom-in">
                     <div class="straight-card relative mx-auto max-w-md rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-[#111722]">
                         <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" 
@@ -257,7 +343,7 @@
         </div>
     </section>
 
-    <!-- Stats Ribbon (Straight & Clean) -->
+    <!-- Stats Ribbon -->
     <section class="relative -mt-6 z-20 max-w-6xl mx-4 sm:mx-auto" data-aos="fade-up">
         <div class="straight-card bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-5 sm:p-7 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-white/10 shadow-lg">
             <div class="pt-2 sm:pt-0">
@@ -279,7 +365,7 @@
         </div>
     </section>
 
-    <!-- ACADEMIC PROGRAMS GRID (STRAIGHT CARDS) -->
+    <!-- ACADEMIC PROGRAMS GRID -->
     <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
             <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full shadow-sm">
@@ -694,7 +780,7 @@
                     </div>
                 </div>
 
-                <!-- Form Card (Straight & Clean) -->
+                <!-- Form Card -->
                 <div class="lg:col-span-7 straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-left">
                     <h3 class="text-xl font-black text-slate-900 dark:text-white font-heading">Admission Application</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Enter candidate details for immediate interview schedule.</p>
@@ -807,7 +893,7 @@
             offset: 80
         });
 
-        // 2. Light / Dark Mode Toggle Functionality
+        // 2. Light / Dark Mode Toggle Functionality (Navbar Switch)
         const themeBtnDesktop = document.getElementById('themeToggleBtn');
         const themeBtnMobile = document.getElementById('themeToggleMobile');
         const themeIconDesktop = document.getElementById('themeIcon');
@@ -844,12 +930,8 @@
             localStorage.setItem('hsja_theme', isDarkNow ? 'dark' : 'light');
         }
 
-        if (themeBtnDesktop) {
-            themeBtnDesktop.addEventListener('click', toggleTheme);
-        }
-        if (themeBtnMobile) {
-            themeBtnMobile.addEventListener('click', toggleTheme);
-        }
+        if (themeBtnDesktop) { themeBtnDesktop.addEventListener('click', toggleTheme); }
+        if (themeBtnMobile) { themeBtnMobile.addEventListener('click', toggleTheme); }
 
         // 3. Top Scroll Progress Bar
         window.addEventListener('scroll', () => {
@@ -880,14 +962,35 @@
             icon.classList.toggle('rotate-180');
         }
 
-        // 6. Mobile Menu Toggle
+        // ================= 6. MOBILE MENU: AUTO-CLOSE & MANUAL TOGGLE =================
         const menuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
+
+        // Function to close the mobile menu
+        function closeMobileDrawer() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        }
+
+        // Manual click on Hamburger (Bars / Xmark toggle)
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('fa-bars');
-            menuIcon.classList.toggle('fa-xmark');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            if (isHidden) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Auto-close when clicking on any link inside the mobile drawer
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileDrawer();
+            });
         });
 
         // 7. Form Submit Simulation
