@@ -219,7 +219,6 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <!-- Fee & Timings with clean chevron (badge removed) -->
             <a href="#structure" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
@@ -875,63 +874,63 @@
         
     </div>
 
-    <!-- ================= PROGRAM DETAILS MODAL (POPUP) ================= -->
-    <div id="programModal" class="fixed inset-0 z-[100000] hidden flex items-center justify-center p-4 bg-black/70 modal-backdrop transition-opacity duration-300">
+    <!-- ================= 100% MOBILE-FIT PROGRAM DETAILS MODAL ================= -->
+    <div id="programModal" class="fixed inset-0 z-[100000] hidden flex items-center justify-center p-3 sm:p-5 bg-black/80 modal-backdrop transition-opacity duration-300">
         
-        <!-- Modal Dialog Box -->
-        <div class="relative w-full max-w-xl bg-white dark:bg-[#111722] rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col transform transition-transform duration-300 scale-95" id="modalBox">
+        <!-- Modal Dialog Box (Guaranteed 100% Viewport Fit) -->
+        <div class="relative w-full max-w-lg bg-white dark:bg-[#111722] rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden max-h-[88vh] flex flex-col my-auto transform transition-all duration-300 scale-95" id="modalBox">
             
             <!-- Modal Header -->
-            <div class="p-6 pb-4 border-b border-slate-100 dark:border-white/10 flex items-start justify-between gap-4 bg-slate-50/50 dark:bg-[#0E1520]">
-                <div class="flex items-center gap-3.5">
-                    <div id="modalIconContainer" class="w-12 h-12 rounded-2xl bg-red-100 dark:bg-red-950/60 text-red-600 flex items-center justify-center text-2xl shadow-sm shrink-0">
+            <div class="p-3.5 sm:p-5 border-b border-slate-100 dark:border-white/10 flex items-center justify-between gap-3 bg-slate-50/70 dark:bg-[#0E1520] shrink-0">
+                <div class="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+                    <div id="modalIconContainer" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 dark:bg-red-950/60 text-red-600 flex items-center justify-center text-xl shadow-sm shrink-0">
                         <i id="modalIcon" class="fa-solid fa-quran"></i>
                     </div>
-                    <div>
-                        <span id="modalCategory" class="text-[10px] font-extrabold uppercase tracking-widest text-red-600 block">Spiritual Wing</span>
-                        <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-heading leading-tight">Tahfeez-ul-Quran</h3>
+                    <div class="min-w-0">
+                        <span id="modalCategory" class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-red-600 block truncate">Spiritual Wing</span>
+                        <h3 id="modalTitle" class="text-base sm:text-xl font-black text-slate-900 dark:text-white font-heading leading-tight truncate">Tahfeez-ul-Quran</h3>
                     </div>
                 </div>
-                <!-- Close Button -->
-                <button onclick="closeProgramModal()" class="w-9 h-9 rounded-xl bg-slate-200/70 dark:bg-white/10 text-slate-600 dark:text-slate-300 hover:text-red-600 flex items-center justify-center text-sm transition">
+                <!-- Close Button (Always visible on mobile) -->
+                <button onclick="closeProgramModal()" class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-slate-200/80 dark:bg-white/10 text-slate-700 dark:text-slate-200 hover:text-red-600 flex items-center justify-center text-sm transition shrink-0 ml-2">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
             <!-- Modal Scrollable Content -->
-            <div class="p-6 overflow-y-auto space-y-5 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-4 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                 
                 <!-- Main Description -->
                 <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1.5 flex items-center gap-2">
                         <i class="fa-solid fa-circle-info text-red-600"></i> Program Overview
                     </h4>
-                    <p id="modalDescription" class="text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+                    <p id="modalDescription" class="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px] sm:text-xs"></p>
                 </div>
 
-                <!-- Feature Highlights Cards -->
-                <div class="grid sm:grid-cols-2 gap-3" id="modalHighlights">
+                <!-- Feature Highlights (Single column on mobile to never squish) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="modalHighlights">
                     <!-- Populated dynamically via JS -->
                 </div>
 
                 <!-- Academic Structure & Daily Routine -->
-                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-xs flex items-center gap-2">
                         <i class="fa-solid fa-list-check text-red-600"></i> Key Offerings & Facilities
                     </h4>
-                    <ul id="modalList" class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                    <ul id="modalList" class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 dark:text-slate-300">
                         <!-- Populated dynamically via JS -->
                     </ul>
                 </div>
 
             </div>
 
-            <!-- Modal Footer (Action Buttons) -->
-            <div class="p-4 sm:p-5 border-t border-slate-100 dark:border-white/10 bg-slate-50 dark:bg-[#0B0F17] flex flex-wrap items-center justify-between gap-3">
-                <button onclick="closeProgramModal()" class="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 font-bold text-xs hover:bg-slate-100 dark:hover:bg-white/5 transition">
+            <!-- Modal Footer (Stacked Buttons on Mobile so Nothing Cuts Off) -->
+            <div class="p-3 sm:p-4 border-t border-slate-100 dark:border-white/10 bg-slate-50 dark:bg-[#0B0F17] flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-2 shrink-0">
+                <button onclick="closeProgramModal()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 font-bold text-xs hover:bg-slate-100 dark:hover:bg-white/5 transition text-center">
                     Close Details
                 </button>
-                <button id="modalApplyBtn" onclick="applyFromModal()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-red-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2">
+                <button id="modalApplyBtn" onclick="applyFromModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-md shadow-red-600/30 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span>Apply for this Wing</span>
                 </button>
@@ -1000,7 +999,7 @@
             document.getElementById('scrollProgressBar').style.width = scrolled + '%';
         });
 
-        // 4. Program Tabs Switcher (Fee section)
+        // 4. Program Tabs Switcher
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = 'tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10';
@@ -1174,27 +1173,24 @@
             document.getElementById('modalDescription').textContent = data.desc;
             document.getElementById('modalIcon').className = data.icon;
 
-            // Populate Highlights
             const highlightsContainer = document.getElementById('modalHighlights');
             highlightsContainer.innerHTML = '';
             data.highlights.forEach(item => {
                 const div = document.createElement('div');
-                div.className = "p-3 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10";
-                div.innerHTML = `<h5 class="font-bold text-xs text-red-600 dark:text-red-400">${item.title}</h5><p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">${item.desc}</p>`;
+                div.className = "p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10";
+                div.innerHTML = `<h5 class="font-bold text-xs text-red-600 dark:text-red-400">${item.title}</h5><p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5 leading-snug">${item.desc}</p>`;
                 highlightsContainer.appendChild(div);
             });
 
-            // Populate List
             const listContainer = document.getElementById('modalList');
             listContainer.innerHTML = '';
             data.points.forEach(point => {
                 const li = document.createElement('li');
                 li.className = "flex items-start gap-2";
-                li.innerHTML = `<i class="fa-solid fa-circle-check text-red-600 text-xs mt-0.5"></i><span>${point}</span>`;
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-red-600 text-xs mt-0.5 shrink-0"></i><span>${point}</span>`;
                 listContainer.appendChild(li);
             });
 
-            // Show Modal with Animation
             const modal = document.getElementById('programModal');
             const box = document.getElementById('modalBox');
             modal.classList.remove('hidden');
@@ -1216,7 +1212,6 @@
             }, 200);
         }
 
-        // Apply Directly from Modal
         function applyFromModal() {
             closeProgramModal();
             setTimeout(() => {
@@ -1231,14 +1226,12 @@
             }, 300);
         }
 
-        // Close on clicking backdrop
         document.getElementById('programModal').addEventListener('click', (e) => {
             if (e.target === document.getElementById('programModal')) {
                 closeProgramModal();
             }
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeProgramModal();
