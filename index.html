@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hazrat Shah Jahangir Academy (HSJA) | Karachi</title>
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN with darkMode: 'class' -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome Icons 6 -->
@@ -21,6 +21,7 @@
     
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -29,12 +30,11 @@
                     },
                     colors: {
                         brand: {
-                            red: '#DC2626',       /* Main Crimson Red matching Logo */
-                            crimson: '#991B1B',   /* Dark Maroon Accent */
+                            red: '#DC2626',       /* Official Logo Red */
+                            crimson: '#991B1B',   /* Deep Maroon */
                             rose: '#E11D48',
-                            dark: '#0B0F17',      /* Deep Charcoal Black */
-                            card: '#131A26',      /* Rich Dark Slate Card */
-                            light: '#FFFFFF'      /* Pure Crisp White */
+                            dark: '#080C14',      /* Night Dark Base */
+                            cardDark: '#111722',  /* Night Card Base */
                         }
                     }
                 }
@@ -48,7 +48,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0B0F17;
+            background: #F1F5F9;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #080C14;
         }
         ::-webkit-scrollbar-thumb {
             background: #DC2626;
@@ -72,33 +75,34 @@
 
         /* Red & White Ambient Neon Glows */
         .glow-red {
-            box-shadow: 0 10px 35px -10px rgba(220, 38, 38, 0.45);
+            box-shadow: 0 10px 30px -8px rgba(220, 38, 38, 0.25);
         }
         .glow-red:hover {
+            box-shadow: 0 18px 45px -5px rgba(220, 38, 38, 0.55);
+        }
+
+        .dark .glow-red {
+            box-shadow: 0 10px 35px -10px rgba(220, 38, 38, 0.45);
+        }
+        .dark .glow-red:hover {
             box-shadow: 0 20px 50px -5px rgba(220, 38, 38, 0.75);
         }
 
-        .glow-white {
-            box-shadow: 0 10px 35px -10px rgba(255, 255, 255, 0.2);
-        }
-        .glow-white:hover {
-            box-shadow: 0 20px 50px -5px rgba(255, 255, 255, 0.4);
-        }
-
-        .glow-crimson {
-            box-shadow: 0 10px 35px -10px rgba(153, 27, 27, 0.5);
-        }
-        .glow-crimson:hover {
-            box-shadow: 0 20px 50px -5px rgba(220, 38, 38, 0.8);
+        /* Light & Dark Ambient Meshes */
+        .gradient-mesh-light {
+            background-color: #FFFFFF;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.06) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(254, 226, 226, 0.5) 0px, transparent 50%);
         }
 
-        /* Logo Red Background Mesh */
-        .gradient-mesh {
-            background-color: #080C14;
+        .dark .gradient-mesh-dark {
+            background-color: #080C14 !important;
             background-image: 
                 radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.4) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, rgba(153, 27, 27, 0.35) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(225, 29, 72, 0.25) 0px, transparent 50%);
+                radial-gradient(at 50% 100%, rgba(225, 29, 72, 0.2) 0px, transparent 50%) !important;
         }
 
         @keyframes floatSlow {
@@ -110,162 +114,162 @@
         }
     </style>
 </head>
-<body class="bg-[#080C14] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+<body class="bg-slate-50 dark:bg-brand-dark text-slate-800 dark:text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white transition-colors duration-300">
 
     <!-- Red Scroll Progress Indicator Bar -->
-    <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-white z-[100] transition-all duration-150" style="width: 0%;"></div>
+    <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-400 z-[100] transition-all duration-150" style="width: 0%;"></div>
 
-    <!-- Top Info Bar -->
-    <div class="bg-black/60 text-slate-300 text-xs py-2 px-4 border-b border-white/10 backdrop-blur-md relative z-50">
+    <!-- Top Info Bar (Red & White Brand Style) -->
+    <div class="bg-red-700 dark:bg-black/80 text-white text-xs py-2 px-4 border-b border-red-800 dark:border-white/10 relative z-40 transition-colors">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center gap-6">
-                <span class="flex items-center gap-2 hover:text-red-400 transition"><i class="fa-solid fa-phone text-red-500"></i> +92 319 4088104</span>
-                <span class="hidden sm:flex items-center gap-2"><i class="fa-solid fa-envelope text-red-500"></i> info@hsja.com.pk</span>
-                <span class="hidden md:flex items-center gap-2 text-slate-400"><i class="fa-solid fa-location-dot text-red-500"></i> Model Colony, Karachi</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-red-200 dark:text-red-400"></i> +92 319 4088104</span>
+                <span class="hidden sm:flex items-center gap-2"><i class="fa-solid fa-envelope text-red-200 dark:text-red-400"></i> info@hsja.com.pk</span>
+                <span class="hidden md:flex items-center gap-2 text-red-100 dark:text-slate-400"><i class="fa-solid fa-location-dot text-red-200 dark:text-red-400"></i> Model Colony, Karachi</span>
             </div>
             <div class="flex items-center gap-4 ml-auto sm:ml-0">
-                <div class="flex items-center gap-3 pr-3 border-r border-slate-700 text-xs">
-                    <a href="#" class="hover:text-red-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-red-400 transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-red-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                <div class="flex items-center gap-3 pr-3 border-r border-red-600 dark:border-slate-700 text-xs">
+                    <a href="#" class="hover:text-red-200 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-red-200 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-red-200 transition"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-                <a href="#map" class="bg-red-600/20 hover:bg-red-600 text-white px-2.5 py-1 rounded text-xs transition border border-red-500/30 flex items-center gap-1.5">
-                    <i class="fa-solid fa-map-location-dot text-red-400"></i> View Map
+                <a href="#map" class="bg-white text-red-700 dark:bg-red-600 dark:text-white font-bold px-2.5 py-1 rounded text-xs transition shadow-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-map-location-dot"></i> View Map
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Sticky Navigation with Actual Red-Bordered HSJA Logo -->
-    <header class="sticky top-0 z-40 bg-[#0B0F17]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-sm dark:shadow-2xl transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-3.5 group">
-                    <div class="p-1.5 rounded-2xl bg-white/5 border border-red-500/40 group-hover:border-red-500 transition duration-300 shadow-[0_0_20px_rgba(220,38,38,0.25)]">
+                    <div class="p-1 rounded-2xl bg-white border-2 border-red-600 shadow-[0_0_15px_rgba(220,38,38,0.25)] transition duration-300">
                         <img src="https://www.hsja.com.pk/wp-content/uploads/2024/08/hsja-logo-img.png" 
                              alt="HSJA Logo" 
                              class="h-12 sm:h-14 w-auto object-contain">
                     </div>
                     <div>
-                        <span class="text-sm sm:text-base font-black text-white font-heading tracking-wide block uppercase leading-tight">Hazrat Shah Jahangir</span>
-                        <span class="text-[10px] sm:text-xs text-red-500 font-bold uppercase tracking-widest block flex items-center gap-1.5">
-                            Academy Karachi <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                        <span class="text-sm sm:text-base font-black text-slate-900 dark:text-white font-heading tracking-wide block uppercase leading-tight">Hazrat Shah Jahangir</span>
+                        <span class="text-[10px] sm:text-xs text-red-600 font-extrabold uppercase tracking-widest block flex items-center gap-1.5">
+                            Academy Karachi <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping"></span>
                         </span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-7 font-semibold text-slate-300 text-sm">
-                    <a href="#" class="text-red-500 py-1 border-b-2 border-red-500">Home</a>
-                    <a href="#about" class="hover:text-red-400 transition">About Academy</a>
-                    <a href="#programs" class="hover:text-red-400 transition">Academic Wings</a>
-                    <a href="#structure" class="hover:text-red-400 transition">Fee & Curriculum</a>
-                    <a href="#gallery" class="hover:text-red-400 transition">Campus Life</a>
-                    <a href="#map" class="hover:text-red-400 transition">Campus Map</a>
-                    <a href="#faqs" class="hover:text-red-400 transition">FAQs</a>
+                <nav class="hidden lg:flex items-center space-x-7 font-bold text-slate-700 dark:text-slate-300 text-sm">
+                    <a href="#" class="text-red-600 py-1 border-b-2 border-red-600">Home</a>
+                    <a href="#about" class="hover:text-red-600 transition">About Academy</a>
+                    <a href="#programs" class="hover:text-red-600 transition">Academic Wings</a>
+                    <a href="#structure" class="hover:text-red-600 transition">Fee & Curriculum</a>
+                    <a href="#gallery" class="hover:text-red-600 transition">Campus Life</a>
+                    <a href="#map" class="hover:text-red-600 transition">Campus Map</a>
+                    <a href="#faqs" class="hover:text-red-600 transition">FAQs</a>
                 </nav>
 
                 <!-- Action Button in Brand Red -->
                 <div class="hidden lg:block">
-                    <a href="#admission" class="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-red-600 via-red-500 to-rose-600 shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-105 transition duration-300">
+                    <a href="#admission" class="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-red-600 to-rose-600 shadow-md shadow-red-600/30 hover:shadow-xl hover:shadow-red-600/50 hover:scale-105 transition duration-300">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>Apply Online</span>
                     </a>
                 </div>
 
                 <!-- Hamburger Button -->
-                <button id="mobileMenuBtn" class="lg:hidden text-2xl text-white p-2">
+                <button id="mobileMenuBtn" class="lg:hidden text-2xl text-slate-800 dark:text-white p-2">
                     <i id="menuIcon" class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Drawer -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-[#0B0F17] border-t border-white/10 px-6 py-5 space-y-3 font-semibold text-slate-200">
-            <a href="#" class="block py-2 text-red-500">Home</a>
-            <a href="#about" class="block py-2 border-b border-white/5">About Academy</a>
-            <a href="#programs" class="block py-2 border-b border-white/5">Academic Wings</a>
-            <a href="#structure" class="block py-2 border-b border-white/5">Fee & Curriculum</a>
-            <a href="#gallery" class="block py-2 border-b border-white/5">Campus Life</a>
-            <a href="#map" class="block py-2 border-b border-white/5">Campus Map</a>
-            <a href="#faqs" class="block py-2 border-b border-white/5">FAQs</a>
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-[#0B0F17] border-t border-slate-200 dark:border-white/10 px-6 py-5 space-y-3 font-semibold text-slate-800 dark:text-slate-200">
+            <a href="#" class="block py-2 text-red-600">Home</a>
+            <a href="#about" class="block py-2 border-b border-slate-100 dark:border-white/5">About Academy</a>
+            <a href="#programs" class="block py-2 border-b border-slate-100 dark:border-white/5">Academic Wings</a>
+            <a href="#structure" class="block py-2 border-b border-slate-100 dark:border-white/5">Fee & Curriculum</a>
+            <a href="#gallery" class="block py-2 border-b border-slate-100 dark:border-white/5">Campus Life</a>
+            <a href="#map" class="block py-2 border-b border-slate-100 dark:border-white/5">Campus Map</a>
+            <a href="#faqs" class="block py-2 border-b border-slate-100 dark:border-white/5">FAQs</a>
             <a href="#admission" class="block text-center bg-red-600 text-white py-3 rounded-xl font-bold mt-2 shadow-lg shadow-red-600/40">Apply Online Now</a>
         </div>
     </header>
 
     <!-- Glowing Marquee Ticker -->
-    <div class="bg-gradient-to-r from-red-950/40 via-red-900/30 to-black border-b border-red-500/20 text-red-300 py-2.5 px-4 text-xs font-semibold backdrop-blur-sm">
+    <div class="bg-red-50 dark:bg-gradient-to-r dark:from-red-950/40 dark:via-red-900/30 dark:to-black border-b border-red-200 dark:border-red-500/20 text-red-900 dark:text-red-300 py-2 px-4 text-xs font-semibold">
         <div class="max-w-7xl mx-auto flex items-center">
-            <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full mr-3 shrink-0 shadow-[0_0_12px_rgba(220,38,38,0.8)] flex items-center gap-1.5 animate-pulse">
+            <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full mr-3 shrink-0 shadow flex items-center gap-1.5 animate-pulse">
                 <i class="fa-solid fa-bell"></i> Admissions Open
             </span>
-            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="text-slate-200">
+            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="text-slate-700 dark:text-slate-200 font-medium">
                 ✨ Admissions Active for Montessori, Primary, Cambridge & Secondary (Matric) Wings! &nbsp;|&nbsp; 📖 Regular Tahfeez-ul-Quran admissions in progress &nbsp;|&nbsp; 📍 Alamgir Society, Model Colony Karachi.
             </marquee>
         </div>
     </div>
 
-    <!-- 3D Hero Section in Red & White Palette -->
-    <section class="gradient-mesh text-white py-16 lg:py-24 relative overflow-hidden">
+    <!-- 3D Hero Section (Clean White in Light, Night Crimson in Dark) -->
+    <section class="gradient-mesh-light dark:gradient-mesh-dark py-16 lg:py-24 relative overflow-hidden transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right">
-                    <div class="inline-flex items-center gap-2 bg-red-950/40 border border-red-500/30 px-4 py-1.5 rounded-full text-xs font-semibold text-red-300 shadow-[0_0_20px_rgba(220,38,38,0.3)]">
-                        <i class="fa-solid fa-crown text-red-400"></i> Leading Educational Institution in Karachi
+                    <div class="inline-flex items-center gap-2 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-4 py-1.5 rounded-full text-xs font-bold text-red-700 dark:text-red-300 shadow-sm">
+                        <i class="fa-solid fa-crown text-red-600"></i> Leading Educational Institution in Karachi
                     </div>
 
-                    <h1 class="text-4xl sm:text-6xl font-black font-heading leading-[1.1] tracking-tight">
+                    <h1 class="text-4xl sm:text-6xl font-black font-heading leading-[1.1] tracking-tight text-slate-900 dark:text-white">
                         Next-Gen Learning <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-300 to-white drop-shadow-[0_0_25px_rgba(220,38,38,0.45)]">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-red-800 dark:from-red-500 dark:via-rose-300 dark:to-white">
                             Deep Spiritual Roots
                         </span>
                     </h1>
 
-                    <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
                         Hazrat Shah Jahangir Academy pairs international Cambridge pedagogy and Board excellence with profound moral character building and Quranic sciences.
                     </p>
 
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
-                        <a href="#admission" class="bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:scale-105 transition duration-300 flex items-center gap-3">
+                        <a href="#admission" class="bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-red-600/30 hover:scale-105 transition duration-300 flex items-center gap-3">
                             <i class="fa-solid fa-paper-plane text-sm"></i>
                             <span>Enroll Your Child</span>
                         </a>
-                        <a href="#map" class="bg-white/5 hover:bg-white/15 border border-white/20 text-white font-semibold px-7 py-4 rounded-2xl backdrop-blur-md hover:border-red-400 transition duration-300 shadow-[0_0_20px_rgba(220,38,38,0.2)] flex items-center gap-2">
-                            <i class="fa-solid fa-location-crosshairs text-red-500"></i>
+                        <a href="#map" class="bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/15 border border-slate-300 dark:border-white/20 text-slate-800 dark:text-white font-bold px-7 py-4 rounded-2xl shadow-sm hover:border-red-500 transition duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-location-crosshairs text-red-600"></i>
                             <span>Find On Map</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- 3D Tilt Hero Frame with Red/White Glow -->
+                <!-- 3D Tilt Hero Frame with Red & White Glow -->
                 <div class="lg:col-span-5 relative" data-aos="zoom-in">
-                    <div class="tilt-card relative mx-auto max-w-md rounded-3xl p-1 bg-gradient-to-br from-red-600/50 via-rose-500/30 to-white/30 glow-red transition duration-500" 
+                    <div class="tilt-card relative mx-auto max-w-md rounded-3xl p-1 bg-gradient-to-br from-red-600/60 via-red-400/30 to-white/60 glow-red transition duration-500" 
                          data-tilt data-tilt-max="12" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
-                        <div class="relative rounded-[22px] overflow-hidden bg-[#0F172A] p-2 preserve-3d">
+                        <div class="relative rounded-[22px] overflow-hidden bg-white dark:bg-[#0F172A] p-2 preserve-3d shadow-xl">
                             <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" 
                                  alt="HSJA Classroom" 
                                  class="w-full h-[420px] object-cover rounded-2xl">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent rounded-2xl"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent rounded-2xl"></div>
                             
                             <div class="absolute bottom-6 left-6 right-6 text-white translate-z-30">
-                                <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-[0_0_15px_rgba(220,38,38,0.8)]">
+                                <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-md">
                                     HSJA Academic Life
                                 </span>
                                 <h4 class="text-base font-bold mt-2">Classroom Engagement & Tech Labs</h4>
-                                <p class="text-xs text-slate-300 mt-1">Holistic teaching methods designed for every child.</p>
+                                <p class="text-xs text-slate-200 mt-1">Holistic teaching methods designed for every child.</p>
                             </div>
                         </div>
 
-                        <div class="animate-float absolute -top-5 -left-5 bg-[#0B0F17]/95 backdrop-blur-xl border border-red-500/30 p-3.5 rounded-2xl shadow-[0_0_25px_rgba(220,38,38,0.4)] hidden sm:flex items-center gap-3">
+                        <div class="animate-float absolute -top-5 -left-5 bg-white dark:bg-[#0B0F17] border-2 border-red-500 p-3.5 rounded-2xl shadow-xl hidden sm:flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-red-600 text-white font-extrabold flex items-center justify-center text-lg shadow">
                                 <i class="fa-solid fa-award"></i>
                             </div>
                             <div>
-                                <p class="text-xs font-bold text-white leading-tight">100% Board Success</p>
-                                <p class="text-[10px] text-red-300 font-medium">A+ Grades Achievers</p>
+                                <p class="text-xs font-bold text-slate-900 dark:text-white leading-tight">100% Board Success</p>
+                                <p class="text-[10px] text-red-600 dark:text-red-300 font-extrabold">A+ Grades Achievers</p>
                             </div>
                         </div>
                     </div>
@@ -275,24 +279,24 @@
         </div>
     </section>
 
-    <!-- Stats Ribbon in Red / White Palette -->
+    <!-- Stats Ribbon -->
     <section class="relative -mt-10 z-20 max-w-6xl mx-4 sm:mx-auto" data-aos="fade-up">
-        <div class="bg-[#121926]/90 backdrop-blur-2xl rounded-2xl border border-white/10 p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/10 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
+        <div class="bg-white dark:bg-[#121926]/90 backdrop-blur-2xl rounded-2xl border border-slate-200 dark:border-white/10 p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-white/10 shadow-xl glow-red transition-colors">
             <div class="pt-2 sm:pt-0 group hover:-translate-y-1 transition duration-300">
-                <span class="text-3xl sm:text-4xl font-black text-red-500 font-heading drop-shadow-[0_0_15px_rgba(220,38,38,0.6)]">20+</span>
-                <p class="text-xs text-slate-300 font-bold uppercase tracking-wider mt-1">Years of Heritage</p>
+                <span class="text-3xl sm:text-4xl font-black text-red-600 font-heading">20+</span>
+                <p class="text-xs text-slate-500 dark:text-slate-300 font-bold uppercase tracking-wider mt-1">Years of Heritage</p>
             </div>
             <div class="pt-2 sm:pt-0 group hover:-translate-y-1 transition duration-300">
-                <span class="text-3xl sm:text-4xl font-black text-white font-heading drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">1,500+</span>
-                <p class="text-xs text-slate-300 font-bold uppercase tracking-wider mt-1">Enrolled Learners</p>
+                <span class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-heading">1,500+</span>
+                <p class="text-xs text-slate-500 dark:text-slate-300 font-bold uppercase tracking-wider mt-1">Enrolled Learners</p>
             </div>
             <div class="pt-4 sm:pt-0 group hover:-translate-y-1 transition duration-300">
-                <span class="text-3xl sm:text-4xl font-black text-red-400 font-heading drop-shadow-[0_0_15px_rgba(248,113,113,0.5)]">60+</span>
-                <p class="text-xs text-slate-300 font-bold uppercase tracking-wider mt-1">Expert Mentors</p>
+                <span class="text-3xl sm:text-4xl font-black text-red-600 font-heading">60+</span>
+                <p class="text-xs text-slate-500 dark:text-slate-300 font-bold uppercase tracking-wider mt-1">Expert Mentors</p>
             </div>
             <div class="pt-4 sm:pt-0 group hover:-translate-y-1 transition duration-300">
-                <span class="text-3xl sm:text-4xl font-black text-rose-500 font-heading drop-shadow-[0_0_15px_rgba(244,63,94,0.5)]">500+</span>
-                <p class="text-xs text-slate-300 font-bold uppercase tracking-wider mt-1">Hafiz Graduates</p>
+                <span class="text-3xl sm:text-4xl font-black text-rose-600 font-heading">500+</span>
+                <p class="text-xs text-slate-500 dark:text-slate-300 font-bold uppercase tracking-wider mt-1">Hafiz Graduates</p>
             </div>
         </div>
     </section>
@@ -300,11 +304,11 @@
     <!-- 3D Academic Programs Grid -->
     <section id="programs" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-            <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-950/40 border border-red-500/30 px-3.5 py-1.5 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+            <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1.5 rounded-full shadow-sm">
                 Our Programs
             </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-heading mt-4">Future-Ready Academic Wings</h2>
-            <p class="text-slate-400 text-sm mt-3">Interactive 3D tilt cards matching our official red and white emblem.</p>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-heading mt-4">Future-Ready Academic Wings</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Interactive 3D tilt cards matching our official red and white emblem.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -312,18 +316,18 @@
             <!-- Tahfeez Card -->
             <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-600/60 to-transparent glow-red transition-all duration-300"
                  data-tilt data-tilt-max="14" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25" data-aos="fade-up">
-                <div class="h-full bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d">
+                <div class="h-full bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d border border-slate-200 dark:border-white/10 shadow-lg">
                     <div class="translate-z-20">
-                        <div class="w-14 h-14 rounded-2xl bg-red-600/20 border border-red-500/40 text-red-500 flex items-center justify-center text-2xl mb-5 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-2xl mb-5 shadow-sm">
                             <i class="fa-solid fa-quran"></i>
                         </div>
-                        <span class="text-[11px] font-bold text-red-400 uppercase tracking-wider">Spiritual Wing</span>
-                        <h3 class="text-2xl font-bold text-white font-heading mt-1">Tahfeez-ul-Quran</h3>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Spiritual Wing</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mt-1">Tahfeez-ul-Quran</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
                             Structured memorization under verified Qaris in the campus mosque. Students also keep up with core English & Math subjects.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-400 translate-z-30">
+                    <div class="pt-6 border-t border-slate-100 dark:border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-600 translate-z-30">
                         <span>Daily Tajweed & Revision</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
@@ -331,20 +335,20 @@
             </div>
 
             <!-- Montessori Card -->
-            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-white/40 to-transparent glow-white transition-all duration-300"
+            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-500/40 to-transparent glow-red transition-all duration-300"
                  data-tilt data-tilt-max="14" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25" data-aos="fade-up">
-                <div class="h-full bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d">
+                <div class="h-full bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d border border-slate-200 dark:border-white/10 shadow-lg">
                     <div class="translate-z-20">
-                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/30 text-white flex items-center justify-center text-2xl mb-5 shadow-[0_0_20px_rgba(255,255,255,0.25)]">
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-2xl mb-5 shadow-sm">
                             <i class="fa-solid fa-shapes"></i>
                         </div>
-                        <span class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Early Childhood</span>
-                        <h3 class="text-2xl font-bold text-white font-heading mt-1">Montessori Wing</h3>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Early Childhood</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mt-1">Montessori Wing</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
                             Playful, sensory-rich setups designed to build language articulation, motor development, and Islamic akhlaq.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-white translate-z-30">
+                    <div class="pt-6 border-t border-slate-100 dark:border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-600 translate-z-30">
                         <span>Playgroup to Prep</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
@@ -354,18 +358,18 @@
             <!-- Cambridge Card -->
             <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-rose-600/60 to-transparent glow-red transition-all duration-300"
                  data-tilt data-tilt-max="14" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25" data-aos="fade-up">
-                <div class="h-full bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d">
+                <div class="h-full bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d border border-slate-200 dark:border-white/10 shadow-lg">
                     <div class="translate-z-20">
-                        <div class="w-14 h-14 rounded-2xl bg-rose-600/20 border border-rose-500/40 text-rose-500 flex items-center justify-center text-2xl mb-5 shadow-[0_0_20px_rgba(244,63,94,0.4)]">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-600/20 border border-rose-200 dark:border-rose-500/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl mb-5 shadow-sm">
                             <i class="fa-solid fa-graduation-cap"></i>
                         </div>
-                        <span class="text-[11px] font-bold text-rose-400 uppercase tracking-wider">Global Standards</span>
-                        <h3 class="text-2xl font-bold text-white font-heading mt-1">Cambridge Stream</h3>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">Global Standards</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mt-1">Cambridge Stream</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
                             Progressive Cambridge international curriculum instilling deep analytical thinking and high English fluency.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-rose-400 translate-z-30">
+                    <div class="pt-6 border-t border-slate-100 dark:border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-rose-600 translate-z-30">
                         <span>Primary & Junior O-Levels</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
@@ -373,20 +377,20 @@
             </div>
 
             <!-- Primary Wing -->
-            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-500/50 to-transparent glow-red transition-all duration-300"
+            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-600/50 to-transparent glow-red transition-all duration-300"
                  data-tilt data-tilt-max="14" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25" data-aos="fade-up">
-                <div class="h-full bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d">
+                <div class="h-full bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d border border-slate-200 dark:border-white/10 shadow-lg">
                     <div class="translate-z-20">
-                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 border border-red-500/40 text-red-400 flex items-center justify-center text-2xl mb-5 shadow-[0_0_20px_rgba(220,38,38,0.3)]">
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-2xl mb-5 shadow-sm">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <span class="text-[11px] font-bold text-red-300 uppercase tracking-wider">Class 1 to 5</span>
-                        <h3 class="text-2xl font-bold text-white font-heading mt-1">Primary School</h3>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Class 1 to 5</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mt-1">Primary School</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
                             Core STEM subjects, Urdu comprehension, moral ethics, and active computer practical training.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-300 translate-z-30">
+                    <div class="pt-6 border-t border-slate-100 dark:border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-600 translate-z-30">
                         <span>Comprehensive Foundation</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
@@ -394,20 +398,20 @@
             </div>
 
             <!-- Matric Wing -->
-            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-crimson/60 to-transparent glow-crimson transition-all duration-300"
+            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-crimson/60 to-transparent glow-red transition-all duration-300"
                  data-tilt data-tilt-max="14" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25" data-aos="fade-up">
-                <div class="h-full bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d">
+                <div class="h-full bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d border border-slate-200 dark:border-white/10 shadow-lg">
                     <div class="translate-z-20">
-                        <div class="w-14 h-14 rounded-2xl bg-red-700/20 border border-red-600/40 text-red-500 flex items-center justify-center text-2xl mb-5 shadow-[0_0_20px_rgba(185,28,28,0.4)]">
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-700/20 border border-red-200 dark:border-red-600/40 text-red-700 dark:text-red-400 flex items-center justify-center text-2xl mb-5 shadow-sm">
                             <i class="fa-solid fa-flask-vial"></i>
                         </div>
-                        <span class="text-[11px] font-bold text-red-400 uppercase tracking-wider">Sindh Board</span>
-                        <h3 class="text-2xl font-bold text-white font-heading mt-1">Matriculation Wing</h3>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        <span class="text-[11px] font-bold text-red-700 dark:text-red-400 uppercase tracking-wider">Sindh Board</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mt-1">Matriculation Wing</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
                             Rigorous science lab practicals, weekly mock tests, and exam preparation yielding top A-one grades.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-400 translate-z-30">
+                    <div class="pt-6 border-t border-slate-100 dark:border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-700 dark:text-red-400 translate-z-30">
                         <span>Class 9 & 10 Science</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
@@ -415,20 +419,20 @@
             </div>
 
             <!-- Digital IT & Robotics -->
-            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-white/30 to-transparent glow-white transition-all duration-300"
+            <div class="tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-400/40 to-transparent glow-red transition-all duration-300"
                  data-tilt data-tilt-max="14" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25" data-aos="fade-up">
-                <div class="h-full bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d">
+                <div class="h-full bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden p-6 flex flex-col justify-between preserve-3d border border-slate-200 dark:border-white/10 shadow-lg">
                     <div class="translate-z-20">
-                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/30 text-white flex items-center justify-center text-2xl mb-5 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-2xl mb-5 shadow-sm">
                             <i class="fa-solid fa-laptop-code"></i>
                         </div>
-                        <span class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Digital Skills</span>
-                        <h3 class="text-2xl font-bold text-white font-heading mt-1">Modern IT & Robotics</h3>
-                        <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Digital Skills</span>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mt-1">Modern IT & Robotics</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
                             Practical digital literacy, computer coding fundamentals, typing speed training, and hardware concepts.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-white translate-z-30">
+                    <div class="pt-6 border-t border-slate-100 dark:border-white/10 mt-6 flex items-center justify-between text-xs font-bold text-red-600 translate-z-30">
                         <span>Hands-On Computer Lab</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
@@ -439,109 +443,109 @@
     </section>
 
     <!-- Program & Fee Overview Tabs -->
-    <section id="structure" class="py-24 bg-[#0A0E17] border-y border-white/5">
+    <section id="structure" class="py-24 bg-slate-100 dark:bg-[#0A0E17] border-y border-slate-200 dark:border-white/5 transition-colors">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-950/40 border border-red-500/30 px-3.5 py-1.5 rounded-full">
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1.5 rounded-full">
                     Transparent Info
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-heading mt-4">Academic & Fee Overview</h2>
-                <p class="text-slate-400 text-sm mt-3">Click on any wing tab to explore timing, curriculum highlights, and criteria.</p>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-heading mt-4">Academic & Fee Overview</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Click on any wing tab to explore timing, curriculum highlights, and criteria.</p>
             </div>
 
             <!-- Tab Buttons in Red & White Palette -->
             <div class="flex flex-wrap justify-center gap-3 mb-8" data-aos="fade-up">
-                <button onclick="switchTab('montessori')" id="tab-montessori" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-lg shadow-red-600/40 transition">
+                <button onclick="switchTab('montessori')" id="tab-montessori" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-lg shadow-red-600/30 transition">
                     Montessori Wing
                 </button>
-                <button onclick="switchTab('primary')" id="tab-primary" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white/5 text-slate-300 hover:bg-white/10 transition border border-white/10">
+                <button onclick="switchTab('primary')" id="tab-primary" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
                     Primary (1-5)
                 </button>
-                <button onclick="switchTab('cambridge')" id="tab-cambridge" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white/5 text-slate-300 hover:bg-white/10 transition border border-white/10">
+                <button onclick="switchTab('cambridge')" id="tab-cambridge" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
                     Cambridge & Matric
                 </button>
-                <button onclick="switchTab('hifz')" id="tab-hifz" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white/5 text-slate-300 hover:bg-white/10 transition border border-white/10">
+                <button onclick="switchTab('hifz')" id="tab-hifz" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
                     Tahfeez-ul-Quran
                 </button>
             </div>
 
             <!-- Tab Contents -->
-            <div class="tilt-card p-1 rounded-3xl bg-gradient-to-br from-red-600/30 via-white/10 to-rose-600/30" data-aos="fade-up">
-                <div class="bg-[#111722] p-8 sm:p-10 rounded-[22px]">
+            <div class="tilt-card p-1 rounded-3xl bg-gradient-to-br from-red-600/40 via-red-200 to-white dark:from-red-600/30 dark:via-white/10 dark:to-rose-600/30" data-aos="fade-up">
+                <div class="bg-white dark:bg-[#111722] p-8 sm:p-10 rounded-[22px] shadow-xl">
                     
                     <div id="content-montessori" class="tab-content grid md:grid-cols-3 gap-6">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-clock text-red-500 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Daily Timings</h4>
-                            <p class="text-xs text-slate-400 mt-1">8:30 AM to 12:30 PM (Mon - Thu)</p>
-                            <p class="text-xs text-slate-400">8:30 AM to 11:30 AM (Friday)</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Daily Timings</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">8:30 AM to 12:30 PM (Mon - Thu)</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400">8:30 AM to 11:30 AM (Friday)</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-book-open text-white text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Curriculum Highlights</h4>
-                            <p class="text-xs text-slate-400 mt-1">Montessori sensorial kit, jolly phonics, daily masnoon duas & rhymes.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-book-open text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Curriculum Highlights</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Montessori sensorial kit, jolly phonics, daily masnoon duas & rhymes.</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-certificate text-red-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Age Eligibility</h4>
-                            <p class="text-xs text-slate-400 mt-1">Playgroup: 2.5 - 3.5 Years</p>
-                            <p class="text-xs text-slate-400">Kindergarten: 4.5 - 5.5 Years</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-certificate text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Age Eligibility</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Playgroup: 2.5 - 3.5 Years</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400">Kindergarten: 4.5 - 5.5 Years</p>
                         </div>
                     </div>
 
                     <div id="content-primary" class="tab-content hidden grid md:grid-cols-3 gap-6">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-clock text-red-500 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Daily Timings</h4>
-                            <p class="text-xs text-slate-400 mt-1">8:00 AM to 1:45 PM (Mon - Thu)</p>
-                            <p class="text-xs text-slate-400">8:00 AM to 12:30 PM (Friday)</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Daily Timings</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">8:00 AM to 1:45 PM (Mon - Thu)</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400">8:00 AM to 12:30 PM (Friday)</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-microscope text-white text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Core Subjects</h4>
-                            <p class="text-xs text-slate-400 mt-1">English Language, Oxford Science, Mathematics, Computer, Social Studies & Nazra.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-microscope text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Core Subjects</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">English Language, Oxford Science, Mathematics, Computer, Social Studies & Nazra.</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-award text-red-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Assessments</h4>
-                            <p class="text-xs text-slate-400 mt-1">Bi-monthly tests + Midterm & Final examinations.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-award text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Assessments</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Bi-monthly tests + Midterm & Final examinations.</p>
                         </div>
                     </div>
 
                     <div id="content-cambridge" class="tab-content hidden grid md:grid-cols-3 gap-6">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-clock text-red-500 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Timings & Tests</h4>
-                            <p class="text-xs text-slate-400 mt-1">8:00 AM to 2:00 PM</p>
-                            <p class="text-xs text-slate-400">Saturday special practical slots.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Timings & Tests</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">8:00 AM to 2:00 PM</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400">Saturday special practical slots.</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-atom text-white text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Science Practical</h4>
-                            <p class="text-xs text-slate-400 mt-1">Hands-on chemistry, biology & physics journal prep for Sindh Board & O-Levels.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-atom text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Science Practical</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Hands-on chemistry, biology & physics journal prep for Sindh Board & O-Levels.</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-hand-holding-dollar text-red-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Scholarships</h4>
-                            <p class="text-xs text-slate-400 mt-1">Up to 50% tuition waiver for 85%+ scorers in board admission tests.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-hand-holding-dollar text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Scholarships</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Up to 50% tuition waiver for 85%+ scorers in board admission tests.</p>
                         </div>
                     </div>
 
                     <div id="content-hifz" class="tab-content hidden grid md:grid-cols-3 gap-6">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-mosque text-red-500 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Venue & Spiritual Care</h4>
-                            <p class="text-xs text-slate-400 mt-1">Conducted inside on-campus mosque with certified Qaris.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-mosque text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Venue & Spiritual Care</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Conducted inside on-campus mosque with certified Qaris.</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-book-quran text-white text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Dual Integration</h4>
-                            <p class="text-xs text-slate-400 mt-1">Daily Sabaq, Sabqi, Manzil alongside mandatory English and Math periods.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-book-quran text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Dual Integration</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Daily Sabaq, Sabqi, Manzil alongside mandatory English and Math periods.</p>
                         </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <i class="fa-solid fa-star-and-crescent text-red-400 text-xl mb-2"></i>
-                            <h4 class="font-bold text-sm text-white">Sanad Award</h4>
-                            <p class="text-xs text-slate-400 mt-1">Formal Dastaar-bandi & certificate on complete memorization.</p>
+                        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <i class="fa-solid fa-star-and-crescent text-red-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Sanad Award</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Formal Dastaar-bandi & certificate on complete memorization.</p>
                         </div>
                     </div>
 
@@ -553,16 +557,16 @@
     <!-- Campus Life Photo Gallery -->
     <section id="gallery" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-            <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-950/40 border border-red-500/30 px-3.5 py-1.5 rounded-full">
+            <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1.5 rounded-full">
                 Real Campus Photographs
             </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-heading mt-4">Inside HSJA Campus</h2>
-            <p class="text-slate-400 text-sm mt-3">Verified classrooms, laboratories, and student learning environments.</p>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-heading mt-4">Inside HSJA Campus</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Verified classrooms, laboratories, and student learning environments.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div class="tilt-card rounded-2xl overflow-hidden border border-white/10 glow-red group relative h-64" data-tilt data-tilt-max="8" data-aos="fade-up">
+            <div class="tilt-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 glow-red group relative h-64 shadow-md" data-tilt data-tilt-max="8" data-aos="fade-up">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" alt="Classroom" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
                     <div>
@@ -572,17 +576,17 @@
                 </div>
             </div>
 
-            <div class="tilt-card rounded-2xl overflow-hidden border border-white/10 glow-white group relative h-64" data-tilt data-tilt-max="8" data-aos="fade-up">
+            <div class="tilt-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 glow-red group relative h-64 shadow-md" data-tilt data-tilt-max="8" data-aos="fade-up">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2296-scaled.webp" alt="Lab" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
                     <div>
-                        <span class="text-slate-300 text-[10px] font-bold uppercase">Science Practical</span>
+                        <span class="text-red-400 text-[10px] font-bold uppercase">Science Practical</span>
                         <h4 class="text-white font-bold text-sm">Dedicated High-Tech Laboratory</h4>
                     </div>
                 </div>
             </div>
 
-            <div class="tilt-card rounded-2xl overflow-hidden border border-white/10 glow-crimson group relative h-64" data-tilt data-tilt-max="8" data-aos="fade-up">
+            <div class="tilt-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 glow-red group relative h-64 shadow-md" data-tilt data-tilt-max="8" data-aos="fade-up">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2387-1-scaled.webp" alt="Mentorship" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
                     <div>
@@ -596,58 +600,58 @@
     </section>
 
     <!-- Google Map Location & Campus Directions -->
-    <section id="map" class="py-24 bg-[#080C14] relative border-t border-white/5">
+    <section id="map" class="py-24 bg-slate-100 dark:bg-[#080C14] relative border-t border-slate-200 dark:border-white/5 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-950/40 border border-red-500/30 px-3.5 py-1.5 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1.5 rounded-full shadow-sm">
                     <i class="fa-solid fa-location-dot mr-1"></i> Visit Campus
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-heading mt-4">Find Us On Google Maps</h2>
-                <p class="text-slate-400 text-sm mt-3">Easily navigate to Hazrat Shah Jahangir Academy in Karachi.</p>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-heading mt-4">Find Us On Google Maps</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Easily navigate to Hazrat Shah Jahangir Academy in Karachi.</p>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-8 items-stretch">
                 
                 <!-- Left Details Card (4 cols) -->
                 <div class="lg:col-span-4 tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-600/50 to-transparent glow-red flex flex-col justify-between" data-tilt data-tilt-max="8" data-aos="fade-right">
-                    <div class="bg-[#111722] p-7 rounded-[22px] h-full flex flex-col justify-between space-y-6">
+                    <div class="bg-white dark:bg-[#111722] p-7 rounded-[22px] h-full flex flex-col justify-between space-y-6 shadow-xl border border-slate-200 dark:border-white/10">
                         <div>
                             <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded">
                                 Main Campus
                             </span>
-                            <h3 class="text-xl font-bold text-white font-heading mt-3">Hazrat Shah Jahangir Academy</h3>
-                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-3">Hazrat Shah Jahangir Academy</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                                 Conveniently located in Alamgir Society with direct access from Mehran Depot Road and Model Colony.
                             </p>
                         </div>
 
                         <div class="space-y-4 text-xs">
-                            <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
-                                <i class="fa-solid fa-map-pin text-red-500 text-base mt-0.5"></i>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-200 dark:border-white/5">
+                                <i class="fa-solid fa-map-pin text-red-600 text-base mt-0.5"></i>
                                 <div>
-                                    <strong class="text-white block font-bold">Address:</strong>
-                                    <span class="text-slate-300">Alamgir Society, Mehran Depot Road, Near Model Colony, Karachi, Sindh.</span>
+                                    <strong class="text-slate-900 dark:text-white block font-bold">Address:</strong>
+                                    <span class="text-slate-600 dark:text-slate-300">Alamgir Society, Mehran Depot Road, Near Model Colony, Karachi, Sindh.</span>
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
-                                <i class="fa-solid fa-clock text-white text-base mt-0.5"></i>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-200 dark:border-white/5">
+                                <i class="fa-solid fa-clock text-red-600 text-base mt-0.5"></i>
                                 <div>
-                                    <strong class="text-white block font-bold">Visiting Hours:</strong>
-                                    <span class="text-slate-300">Mon - Sat: 8:30 AM to 1:30 PM (Parents & Admissions Desk)</span>
+                                    <strong class="text-slate-900 dark:text-white block font-bold">Visiting Hours:</strong>
+                                    <span class="text-slate-600 dark:text-slate-300">Mon - Sat: 8:30 AM to 1:30 PM (Parents Desk)</span>
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
-                                <i class="fa-solid fa-bus text-red-400 text-base mt-0.5"></i>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-200 dark:border-white/5">
+                                <i class="fa-solid fa-bus text-red-600 text-base mt-0.5"></i>
                                 <div>
-                                    <strong class="text-white block font-bold">Landmark:</strong>
-                                    <span class="text-slate-300">Near Mehran Bus Depot & Malir Halt Route.</span>
+                                    <strong class="text-slate-900 dark:text-white block font-bold">Landmark:</strong>
+                                    <span class="text-slate-600 dark:text-slate-300">Near Mehran Bus Depot & Malir Halt Route.</span>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="https://maps.google.com/?q=Hazrat+Shah+Jahangir+Academy+Karachi" target="_blank" class="w-full text-center bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-3.5 rounded-xl text-xs shadow-lg shadow-red-600/30 transition duration-200 flex items-center justify-center gap-2">
+                        <a href="https://maps.google.com/?q=Hazrat+Shah+Jahangir+Academy+Karachi" target="_blank" class="w-full text-center bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-bold py-3.5 rounded-xl text-xs shadow-lg shadow-red-600/30 transition duration-200 flex items-center justify-center gap-2">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span>Get GPS Driving Directions</span>
                         </a>
@@ -655,21 +659,21 @@
                 </div>
 
                 <!-- Right Live Google Map (8 cols) -->
-                <div class="lg:col-span-8 rounded-3xl p-1 bg-gradient-to-br from-red-600/40 via-white/20 to-rose-600/40 glow-red" data-aos="fade-left">
-                    <div class="bg-[#111722] rounded-[22px] overflow-hidden h-[450px] lg:h-full min-h-[420px] relative shadow-2xl">
+                <div class="lg:col-span-8 rounded-3xl p-1 bg-gradient-to-br from-red-600/40 via-red-300 to-rose-600/40 glow-red" data-aos="fade-left">
+                    <div class="bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden h-[450px] lg:h-full min-h-[420px] relative shadow-2xl border border-slate-200 dark:border-white/10">
                         <iframe 
                             src="https://maps.google.com/maps?q=Hazrat%20Shah%20Jahangir%20Academy%20Alamgir%20Society%20Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="100%" 
-                            style="border:0; filter: contrast(1.05) saturate(1.1);" 
+                            style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Hazrat Shah Jahangir Academy Location Map">
                         </iframe>
 
-                        <div class="absolute top-4 right-4 bg-[#0B0F17]/90 backdrop-blur-md border border-red-500/30 text-white px-3.5 py-1.5 rounded-xl text-xs font-bold shadow-xl hidden sm:flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                        <div class="absolute top-4 right-4 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-md border border-red-500/30 text-slate-900 dark:text-white px-3.5 py-1.5 rounded-xl text-xs font-bold shadow-xl hidden sm:flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
                             <span>HSJA Verified Location</span>
                         </div>
                     </div>
@@ -680,42 +684,42 @@
     </section>
 
     <!-- FAQs Accordion -->
-    <section id="faqs" class="py-24 bg-[#0A0E17]">
+    <section id="faqs" class="py-24 bg-white dark:bg-[#0A0E17] transition-colors">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-950/40 border border-red-500/30 px-3.5 py-1.5 rounded-full">
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1.5 rounded-full">
                     Got Questions?
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-heading mt-4">Frequently Asked Questions</h2>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-heading mt-4">Frequently Asked Questions</h2>
             </div>
 
             <div class="space-y-4" data-aos="fade-up">
-                <div class="rounded-2xl border border-white/10 bg-[#111722] overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center hover:text-red-400 transition">
+                <div class="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#111722] overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center hover:text-red-600 transition">
                         <span>Is transport facility available for distant areas?</span>
                         <i id="faq-icon-1" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-1" class="hidden px-6 pb-5 text-xs text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                    <div id="faq-ans-1" class="hidden px-6 pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-white/5 pt-3">
                         Yes, monitored vans and buses operate across Model Colony, Malir, Airport road, and nearby residential sectors with dedicated female attendants for younger children.
                     </div>
                 </div>
 
-                <div class="rounded-2xl border border-white/10 bg-[#111722] overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center hover:text-red-400 transition">
+                <div class="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#111722] overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center hover:text-red-600 transition">
                         <span>What is the admission assessment criteria?</span>
                         <i id="faq-icon-2" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-2" class="hidden px-6 pb-5 text-xs text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                    <div id="faq-ans-2" class="hidden px-6 pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-white/5 pt-3">
                         Students applying for Class 1 to 9 undergo a diagnostic written test in English, Mathematics, and Urdu. Montessori applicants are assessed through an informal interactive observation session.
                     </div>
                 </div>
 
-                <div class="rounded-2xl border border-white/10 bg-[#111722] overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center hover:text-red-400 transition">
+                <div class="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#111722] overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center hover:text-red-600 transition">
                         <span>Can a student do Hifz along with regular academics?</span>
                         <i id="faq-icon-3" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-3" class="hidden px-6 pb-5 text-xs text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                    <div id="faq-ans-3" class="hidden px-6 pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-white/5 pt-3">
                         Yes, our Tahfeez-ul-Quran stream is specially tailored so that students never fall behind in English and Mathematics while committing the Holy Quran to memory.
                     </div>
                 </div>
@@ -724,52 +728,52 @@
     </section>
 
     <!-- Admission Application Section -->
-    <section id="admission" class="py-24 relative overflow-hidden">
+    <section id="admission" class="py-24 bg-slate-50 dark:bg-[#080C14] relative overflow-hidden transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
-                    <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-950/40 border border-red-500/30 px-3.5 py-1.5 rounded-full">
+                    <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1.5 rounded-full">
                         Admissions Open
                     </span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
+                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white font-heading leading-tight">
                         Begin Your Journey with HSJA
                     </h2>
-                    <p class="text-slate-300 text-sm leading-relaxed">
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                         Seats for the upcoming academic session are strictly allocated based on assessment criteria. Register your child now to receive our admissions call.
                     </p>
-                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 text-xs">
-                        <p class="text-red-400 font-bold flex items-center gap-2">
+                    <div class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-3 text-xs shadow-sm">
+                        <p class="text-red-600 font-bold flex items-center gap-2">
                             <i class="fa-solid fa-map-pin"></i> Alamgir Society, Mehran Depot Road, Model Colony, Karachi
                         </p>
-                        <p class="text-slate-300 flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-white"></i> +92 319 4088104 (Admissions Helpline)
+                        <p class="text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-red-600"></i> +92 319 4088104 (Admissions Helpline)
                         </p>
                     </div>
                 </div>
 
                 <!-- 3D Form Card in Red & White -->
-                <div class="lg:col-span-7 tilt-card p-1 rounded-3xl bg-gradient-to-br from-red-600/50 via-white/20 to-rose-600/50 glow-red" 
+                <div class="lg:col-span-7 tilt-card p-1 rounded-3xl bg-gradient-to-br from-red-600/50 via-red-200 to-rose-600/50 glow-red" 
                      data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15" data-aos="fade-left">
-                    <div class="bg-[#111722] p-8 sm:p-10 rounded-[22px] preserve-3d">
-                        <h3 class="text-2xl font-black text-white font-heading">Admission Application</h3>
-                        <p class="text-xs text-slate-400 mb-6">Enter candidate details for immediate interview schedule.</p>
+                    <div class="bg-white dark:bg-[#111722] p-8 sm:p-10 rounded-[22px] preserve-3d shadow-2xl border border-slate-200 dark:border-white/10">
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white font-heading">Admission Application</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Enter candidate details for immediate interview schedule.</p>
 
                         <form onsubmit="handleForm(event)" class="space-y-4">
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-300 mb-1">Student Full Name *</label>
-                                    <input type="text" required placeholder="Muhammad Ali" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-red-500 text-sm">
+                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Student Full Name *</label>
+                                    <input type="text" required placeholder="Muhammad Ali" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-red-600 text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-300 mb-1">Parent's WhatsApp No *</label>
-                                    <input type="tel" required placeholder="0319 4088104" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-red-500 text-sm">
+                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent's WhatsApp No *</label>
+                                    <input type="tel" required placeholder="0319 4088104" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-red-600 text-sm">
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-xs font-bold text-slate-300 mb-1">Applying For *</label>
-                                <select required class="w-full px-4 py-3 rounded-xl bg-[#0B0F17] border border-white/10 text-white focus:outline-none focus:border-red-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Applying For *</label>
+                                <select required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0B0F17] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-red-600 text-sm">
                                     <option value="">Select Wing</option>
                                     <option value="Montessori">Montessori / Kindergarten</option>
                                     <option value="Primary">Primary School (Grades 1-5)</option>
@@ -779,12 +783,12 @@
                                 </select>
                             </div>
 
-                            <button type="submit" class="w-full bg-gradient-to-r from-red-600 via-red-500 to-rose-600 text-white font-extrabold py-4 rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:scale-[1.02] transition duration-200">
+                            <button type="submit" class="w-full bg-gradient-to-r from-red-600 via-red-500 to-rose-600 text-white font-extrabold py-4 rounded-xl shadow-lg shadow-red-600/40 hover:scale-[1.02] transition duration-200">
                                 Submit Admission Application &rarr;
                             </button>
                         </form>
 
-                        <div id="successBox" class="hidden mt-4 p-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 rounded-xl text-xs font-bold">
+                        <div id="successBox" class="hidden mt-4 p-4 bg-emerald-50 dark:bg-emerald-500/20 border border-emerald-200 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 rounded-xl text-xs font-bold">
                             🎉 JazakAllah! Inquiry receive ho chuki hai. HSJA desk aap se rabta karega.
                         </div>
                     </div>
@@ -795,10 +799,10 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-black text-slate-400 text-xs pt-16 pb-8 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+    <footer id="contact" class="bg-slate-950 text-slate-400 text-xs pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
             <div>
-                <img src="https://www.hsja.com.pk/wp-content/uploads/2024/08/hsja-logo-img.png" alt="HSJA Logo" class="h-14 w-auto mb-4 bg-white/5 p-2 rounded-xl border border-red-500/30">
+                <img src="https://www.hsja.com.pk/wp-content/uploads/2024/08/hsja-logo-img.png" alt="HSJA Logo" class="h-14 w-auto mb-4 bg-white p-2 rounded-xl border border-red-500/30">
                 <p class="leading-relaxed">
                     Hazrat Shah Jahangir Academy is an institution committed to cultivating spiritual piety and contemporary intellectual competence.
                 </p>
@@ -821,9 +825,9 @@
             <div>
                 <h5 class="text-white font-bold uppercase tracking-wider mb-3">Social Connect</h5>
                 <div class="flex gap-3 text-lg">
-                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/923194088104" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-emerald-500 hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-red-600 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-red-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/923194088104" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-emerald-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -832,14 +836,22 @@
         </div>
     </footer>
 
-    <!-- Floating Actions: Back to Top & WhatsApp -->
-    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hidden fixed bottom-24 right-6 z-50 bg-[#0B0F17] border border-red-500/40 text-red-500 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-lg hover:scale-110 transition duration-300">
+    <!-- ================= FLOATING STACK (BOTTOM-RIGHT) ================= -->
+    
+    <!-- 1. Top of Stack: Light / Dark Mode Toggle Button (fixed bottom-40 right-6) -->
+    <button id="themeToggleBtn" aria-label="Toggle Theme" class="fixed bottom-40 right-6 z-50 bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-lg hover:scale-110 transition duration-300 glow-red">
+        <i id="themeIcon" class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- 2. Middle of Stack: Back to Top Arrow Button (fixed bottom-24 right-6) -->
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hidden fixed bottom-24 right-6 z-50 bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-lg hover:scale-110 transition duration-300 glow-red">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- 3. Bottom of Stack: Official WhatsApp Floating Button (fixed bottom-6 right-6) -->
     <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." 
        target="_blank" 
-       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-emerald-500 text-white w-14 h-14 rounded-full shadow-[0_0_25px_rgba(37,211,102,0.6)] flex items-center justify-center text-3xl hover:scale-110 transition duration-300">
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-[0_0_25px_rgba(37,211,102,0.6)] flex items-center justify-center text-3xl hover:scale-110 transition duration-300">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -849,7 +861,7 @@
     <!-- AOS JS CDN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // AOS Initialized with repeat & bidirectional animations (both up & down)
+        // 1. AOS Initialized with repeat & bidirectional animations (both up & down)
         AOS.init({
             duration: 700,
             easing: 'ease-out-cubic',
@@ -858,7 +870,37 @@
             offset: 80
         });
 
-        // Top Scroll Progress Bar & Back to top button
+        // 2. Light / Dark Mode Toggle Functionality (with LocalStorage)
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check user's saved preference
+        const currentTheme = localStorage.getItem('hsja_theme') || 'light';
+        if (currentTheme === 'dark') {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            htmlElement.classList.remove('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            if (isDark) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('hsja_theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('hsja_theme', 'light');
+            }
+        });
+
+        // 3. Top Scroll Progress Bar & Back to top button
         window.addEventListener('scroll', () => {
             const winScroll = document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -873,12 +915,12 @@
             }
         });
 
-        // Program Tabs Switcher
+        // 4. Program Tabs Switcher
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = 'tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white/5 text-slate-300 hover:bg-white/10 transition border border-white/10';
+                btn.className = 'tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10';
             });
-            document.getElementById('tab-' + tabName).className = 'tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-lg shadow-red-600/40 transition';
+            document.getElementById('tab-' + tabName).className = 'tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-lg shadow-red-600/30 transition';
 
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.add('hidden');
@@ -886,7 +928,7 @@
             document.getElementById('content-' + tabName).classList.remove('hidden');
         }
 
-        // FAQs Accordion Toggle
+        // 5. FAQs Accordion Toggle
         function toggleFaq(id) {
             const ans = document.getElementById('faq-ans-' + id);
             const icon = document.getElementById('faq-icon-' + id);
@@ -894,7 +936,7 @@
             icon.classList.toggle('rotate-180');
         }
 
-        // Mobile Menu Toggle
+        // 6. Mobile Menu Toggle
         const menuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
@@ -904,7 +946,7 @@
             menuIcon.classList.toggle('fa-xmark');
         });
 
-        // Form Submit Simulation
+        // 7. Form Submit Simulation
         function handleForm(e) {
             e.preventDefault();
             document.getElementById('successBox').classList.remove('hidden');
