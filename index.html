@@ -11,7 +11,7 @@
     <!-- Font Awesome Icons 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS (Animate On Scroll) -->
+    <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Google Fonts -->
@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -42,76 +43,15 @@
         }
     </script>
 
-    <style>
-        /* Smooth Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F1F5F9;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #080C14;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #DC2626;
-            border-radius: 4px;
-        }
-
-        /* Clean Hero Background */
-        .hsja-hero-bg {
-            background-color: #FFFFFF !important;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.08) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.05) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(254, 226, 226, 0.4) 0px, transparent 50%) !important;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .dark .hsja-hero-bg {
-            background-color: #080C14 !important;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.45) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(153, 27, 27, 0.35) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(225, 29, 72, 0.25) 0px, transparent 50%) !important;
-        }
-
-        /* Interactive Straight Card */
-        .straight-card {
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
-        }
-        .straight-card:active {
-            transform: scale(0.98) !important;
-        }
-        @media (min-width: 1024px) {
-            .straight-card:hover {
-                transform: translateY(-5px) !important;
-            }
-        }
-
-        /* Mobile Animated Red Glow Tabs */
-        .mobile-tab-item {
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .mobile-tab-item:active {
-            transform: scale(0.97);
-            border-color: #DC2626 !important;
-            box-shadow: 0 0 15px rgba(220, 38, 38, 0.4) !important;
-        }
-
-        /* Modal Blur Backing */
-        .modal-backdrop {
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-    </style>
+    <!-- LINK TO EXTERNAL CSS FILE -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 dark:bg-[#080C14] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white transition-colors duration-300">
 
-    <!-- Top Neon Scroll Progress Indicator Bar -->
+    <!-- Scroll Progress Indicator -->
     <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-400 z-[100] transition-all duration-150" style="width: 0%;"></div>
 
-    <!-- Top Info Bar (Slim & Professional) -->
+    <!-- Top Info Bar -->
     <div class="bg-red-700 dark:bg-black text-white text-xs py-2 px-4 border-b border-red-800 dark:border-white/10 relative z-30 transition-colors">
         <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
             <div class="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
@@ -129,17 +69,14 @@
         </div>
     </div>
 
-    <!-- CLEAN & SPACIOUS MAIN NAVBAR -->
+    <!-- Main Navigation Bar -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-sm transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20">
-                
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-2.5 shrink-0 group">
                     <div class="w-11 h-11 p-1 rounded-xl bg-white border border-red-600 shadow-sm flex items-center justify-center">
-                        <img src="https://www.hsja.com.pk/wp-content/uploads/2024/08/hsja-logo-img.png" 
-                             alt="HSJA Logo" 
-                             class="h-9 w-auto object-contain">
+                        <img src="https://www.hsja.com.pk/wp-content/uploads/2024/08/hsja-logo-img.png" alt="HSJA Logo" class="h-9 w-auto object-contain">
                     </div>
                     <div>
                         <div class="flex items-center gap-1.5">
@@ -150,31 +87,32 @@
                     </div>
                 </a>
 
-                <!-- Organized Desktop Links -->
+                <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-[13px] font-bold text-slate-700 dark:text-slate-200">
                     <a href="#" class="px-3 py-1.5 rounded-lg text-red-600 bg-red-50 dark:bg-red-950/40 font-extrabold">Home</a>
                     <a href="#about" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition">About</a>
-                    <a href="#programs" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition">Wings</a>
+                    <a href="programs.html" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition flex items-center gap-1">
+                        <span>Wings</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
                     <a href="#structure" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition">Fee & Timings</a>
                     <a href="#gallery" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition">Campus</a>
                     <a href="#map" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition">Location</a>
                     <a href="#faqs" class="px-2.5 py-1.5 rounded-lg hover:text-red-600 hover:bg-slate-100 dark:hover:bg-white/5 transition">FAQs</a>
                 </nav>
 
-                <!-- Right Action Area: Light/Dark Mode + Apply Button -->
+                <!-- Right Action Buttons -->
                 <div class="hidden lg:flex items-center gap-2.5 shrink-0">
                     <button id="themeToggleBtn" type="button" aria-label="Toggle Theme" title="Switch Light/Dark Mode"
                             class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/10 border border-slate-300 dark:border-white/10 text-slate-700 dark:text-yellow-400 flex items-center justify-center text-sm hover:scale-105 active:scale-95 transition">
                         <i id="themeIcon" class="fa-solid fa-moon"></i>
                     </button>
-
                     <a href="#admission" class="px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-gradient-to-r from-red-600 to-rose-600 shadow-md shadow-red-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-1.5">
                         <i class="fa-solid fa-graduation-cap text-xs"></i>
                         <span>Apply Online</span>
                     </a>
                 </div>
 
-                <!-- Hamburger Button (Mobile) -->
+                <!-- Mobile Action Area -->
                 <div class="flex items-center gap-2 lg:hidden">
                     <button id="themeToggleMobile" type="button" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-yellow-400 flex items-center justify-center text-sm">
                         <i id="themeIconMobile" class="fa-solid fa-moon"></i>
@@ -186,12 +124,11 @@
             </div>
         </div>
 
-        <!-- ================= MOBILE DRAWER ================= -->
+        <!-- Mobile Drawer -->
         <div id="mobileMenu" class="hidden lg:hidden bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-2xl border-t border-slate-200 dark:border-white/10 px-4 py-4 space-y-2 shadow-2xl transition-all duration-300 max-h-[82vh] overflow-y-auto">
-            
-            <a href="#" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-red-50/80 dark:bg-red-950/30 border border-red-300 dark:border-red-900/60 shadow-[0_0_12px_rgba(220,38,38,0.15)]">
+            <a href="#" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-red-50/80 dark:bg-red-950/30 border border-red-300 dark:border-red-900/60">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-xs shadow-sm">
+                    <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-xs">
                         <i class="fa-solid fa-house"></i>
                     </div>
                     <span class="font-extrabold text-xs text-red-600 dark:text-red-400">Home</span>
@@ -199,7 +136,7 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-red-500"></i>
             </a>
 
-            <a href="#about" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+            <a href="#about" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-school"></i>
@@ -209,17 +146,17 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <a href="#programs" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+            <a href="programs.html" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-layer-group"></i>
                     </div>
-                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Academic Wings</span>
+                    <span class="font-bold text-xs text-slate-800 dark:text-slate-200">Academic Wings & Details</span>
                 </div>
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <a href="#structure" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+            <a href="#structure" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-clock"></i>
@@ -229,7 +166,7 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <a href="#gallery" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+            <a href="#gallery" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-images"></i>
@@ -239,7 +176,7 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <a href="#map" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+            <a href="#map" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-map-location-dot"></i>
@@ -249,7 +186,7 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <a href="#faqs" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10 hover:border-red-500 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)]">
+            <a href="#faqs" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-[#111722] border border-slate-200/80 dark:border-white/10">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 text-red-600 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-circle-question"></i>
@@ -259,13 +196,13 @@
                 <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
             </a>
 
-            <a href="#admission" class="mobile-nav-link block text-center bg-gradient-to-r from-red-600 to-rose-600 text-white py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-[0_4px_20px_rgba(220,38,38,0.4)] active:scale-95 transition mt-3">
+            <a href="#admission" class="mobile-nav-link block text-center bg-gradient-to-r from-red-600 to-rose-600 text-white py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-md active:scale-95 transition mt-3">
                 <i class="fa-solid fa-graduation-cap mr-1.5"></i> Apply Online Now
             </a>
         </div>
     </header>
 
-    <!-- Notice Ticker -->
+    <!-- Urgent Updates Ticker -->
     <div class="bg-red-50 dark:bg-red-950/40 border-b border-red-200 dark:border-red-500/20 text-red-900 dark:text-red-300 py-2 px-4 text-xs font-semibold">
         <div class="max-w-7xl mx-auto flex items-center overflow-hidden">
             <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full mr-3 shrink-0 shadow flex items-center gap-1.5">
@@ -277,13 +214,11 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section class="hsja-hero-bg py-12 lg:py-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                
                 <div class="lg:col-span-7 space-y-5 text-center lg:text-left" data-aos="fade-right">
-                    
                     <div class="inline-flex items-center gap-2 bg-red-100 dark:bg-red-950/60 border border-red-300 dark:border-red-500/40 px-3.5 py-1 rounded-full text-xs font-bold text-red-700 dark:text-red-300 shadow-sm">
                         <i class="fa-solid fa-crown text-red-600"></i> Leading Educational Institution in Karachi
                     </div>
@@ -311,14 +246,10 @@
                     </div>
                 </div>
 
-                <!-- STRAIGHT & CLEAN HERO IMAGE CARD -->
                 <div class="lg:col-span-5 relative" data-aos="zoom-in">
                     <div class="straight-card relative mx-auto max-w-md rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-[#111722]">
-                        <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" 
-                             alt="HSJA Classroom" 
-                             class="w-full h-[380px] sm:h-[420px] object-cover">
+                        <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" alt="HSJA Classroom" class="w-full h-[380px] sm:h-[420px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        
                         <div class="absolute bottom-5 left-5 right-5 text-white">
                             <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-sm">
                                 HSJA Academic Life
@@ -326,14 +257,12 @@
                             <h4 class="text-sm sm:text-base font-bold mt-1.5 text-white">Classroom Engagement & Tech Labs</h4>
                             <p class="text-xs text-slate-200 mt-0.5">Holistic teaching methods designed for every child.</p>
                         </div>
-
                         <div class="absolute top-4 right-4 bg-white/95 dark:bg-[#0B0F17]/95 border border-red-500/30 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2">
                             <i class="fa-solid fa-award text-red-600 text-sm"></i>
                             <span class="text-[11px] font-black text-slate-900 dark:text-white">100% Board Success</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -360,233 +289,254 @@
         </div>
     </section>
 
-    <!-- ================= ACADEMIC PROGRAMS GRID (CLICKABLE FOR DETAILS) ================= -->
-    <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-            <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full shadow-sm">
-                Our Programs
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading mt-3">Future-Ready Academic Wings</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Tap or click any card below to view syllabus, age criteria & program details.</p>
+    <!-- About Brief -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-6 space-y-4" data-aos="fade-right">
+                <span class="text-xs font-black uppercase text-red-600 bg-red-100 dark:bg-red-950/60 px-3 py-1 rounded-full">About HSJA</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white font-heading">
+                    Inspiring Character, Faith & High Academic Eminence
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    Hazrat Shah Jahangir Academy is an educational institution focused on modern Cambridge pedagogy, Board exam preparation, and Quranic Tarbiyah. Located in Karachi, our mission is to build responsible, morally upright future leaders.
+                </p>
+                <div class="space-y-2 text-xs text-slate-700 dark:text-slate-300 pt-2">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Qualified and passionate subject specialist teachers.</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Full-time Tahfeez-ul-Quran classes held in campus mosque.</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Well-equipped Physics, Chemistry, Biology & Computer Labs.</div>
+                </div>
+            </div>
+            <div class="lg:col-span-6" data-aos="fade-left">
+                <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg">
+                    <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2257-scaled.webp" alt="Campus Life" class="w-full h-80 object-cover">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- 1. Tahfeez Card (Clickable) -->
-            <div onclick="openProgramModal('hifz')" class="straight-card cursor-pointer group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-quran"></i>
-                    </div>
-                    <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Spiritual Wing</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Tahfeez-ul-Quran</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                        Structured memorization under verified Qaris in the campus mosque. Students also keep up with core English & Math subjects.
-                    </p>
-                </div>
-                <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye"></i> View Full Details</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </div>
+    <!-- Academic Programs (Cards link cleanly to programs.html) -->
+    <section id="programs" class="py-20 bg-slate-100 dark:bg-[#0B0F17] border-y border-slate-200 dark:border-white/5 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full shadow-sm">
+                    Our Programs
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading mt-3">Future-Ready Academic Wings</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Click any card below to view complete syllabus and program details on our dedicated page.</p>
             </div>
 
-            <!-- 2. Montessori Card (Clickable) -->
-            <div onclick="openProgramModal('montessori')" class="straight-card cursor-pointer group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-shapes"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tahfeez Card -->
+                <a href="programs.html#hifz" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-quran"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Spiritual Wing</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Tahfeez-ul-Quran</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                            Structured memorization under verified Qaris in the campus mosque. Students also keep up with core English & Math subjects.
+                        </p>
                     </div>
-                    <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Early Childhood</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Montessori Wing</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                        Playful, sensory-rich setups designed to build language articulation, motor development, and Islamic akhlaq.
-                    </p>
-                </div>
-                <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye"></i> View Full Details</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </div>
-            </div>
-
-            <!-- 3. Cambridge Card (Clickable) -->
-            <div onclick="openProgramModal('cambridge')" class="straight-card cursor-pointer group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-600/20 border border-rose-200 dark:border-rose-500/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Read Full Syllabus & Details</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
-                    <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">Global Standards</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Cambridge Stream</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                        Progressive Cambridge international curriculum instilling deep analytical thinking and high English fluency.
-                    </p>
-                </div>
-                <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-rose-600">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye"></i> View Full Details</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </div>
-            </div>
+                </a>
 
-            <!-- 4. Primary Wing Card (Clickable) -->
-            <div onclick="openProgramModal('primary')" class="straight-card cursor-pointer group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-book-open"></i>
+                <!-- Montessori Card -->
+                <a href="programs.html#montessori" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Early Childhood</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Montessori Wing</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                            Playful, sensory-rich setups designed to build language articulation, motor development, and Islamic akhlaq.
+                        </p>
                     </div>
-                    <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Class 1 to 5</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Primary School</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                        Core STEM subjects, Urdu comprehension, moral ethics, and active computer practical training.
-                    </p>
-                </div>
-                <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye"></i> View Full Details</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </div>
-            </div>
-
-            <!-- 5. Matric Wing Card (Clickable) -->
-            <div onclick="openProgramModal('matric')" class="straight-card cursor-pointer group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-700/20 border border-red-200 dark:border-red-600/40 text-red-700 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-flask-vial"></i>
+                    <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Read Full Syllabus & Details</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
-                    <span class="text-[11px] font-bold text-red-700 dark:text-red-400 uppercase tracking-wider">Sindh Board</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Matriculation Wing</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                        Rigorous science lab practicals, weekly mock tests, and exam preparation yielding top A-one grades.
-                    </p>
-                </div>
-                <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-700 dark:text-red-400">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye"></i> View Full Details</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </div>
-            </div>
+                </a>
 
-            <!-- 6. Digital IT & Robotics Card (Clickable) -->
-            <div onclick="openProgramModal('robotics')" class="straight-card cursor-pointer group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-laptop-code"></i>
+                <!-- Cambridge Card -->
+                <a href="programs.html#cambridge" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-600/20 border border-rose-200 dark:border-rose-500/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">Global Standards</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Cambridge Stream</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                            Progressive Cambridge international curriculum instilling deep analytical thinking and high English fluency.
+                        </p>
                     </div>
-                    <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Digital Skills</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Modern IT & Robotics</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                        Practical digital literacy, computer coding fundamentals, typing speed training, and hardware concepts.
-                    </p>
-                </div>
-                <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-eye"></i> View Full Details</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </div>
-            </div>
+                    <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-rose-600">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Read Full Syllabus & Details</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
 
+                <!-- Primary Wing Card -->
+                <a href="programs.html#primary" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Class 1 to 5</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Primary School</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                            Core STEM subjects, Urdu comprehension, moral ethics, and active computer practical training.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Read Full Syllabus & Details</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
+
+                <!-- Matric Wing Card -->
+                <a href="programs.html#matric" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-700/20 border border-red-200 dark:border-red-600/40 text-red-700 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-flask-vial"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-red-700 dark:text-red-400 uppercase tracking-wider">Sindh Board</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Matriculation Wing</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                            Rigorous science lab practicals, weekly mock tests, and exam preparation yielding top A-one grades.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-700 dark:text-red-400">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Read Full Syllabus & Details</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
+
+                <!-- Robotics Card -->
+                <a href="programs.html#robotics" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-red-600 uppercase tracking-wider">Digital Skills</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mt-1 group-hover:text-red-600 transition">Modern IT & Robotics</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                            Practical digital literacy, computer coding fundamentals, typing speed training, and hardware concepts.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-100 dark:border-white/10 mt-5 flex items-center justify-between text-xs font-bold text-red-600">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Read Full Syllabus & Details</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Program & Fee Overview Tabs -->
-    <section id="structure" class="py-20 bg-slate-100 dark:bg-[#0B0F17] border-y border-slate-200 dark:border-white/5 transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
-                    Transparent Info
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading mt-3">Academic & Fee Overview</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Click on any wing tab to explore timing, curriculum highlights, and criteria.</p>
+    <section id="structure" class="py-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+            <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
+                Transparent Info
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading mt-3">Academic & Fee Overview</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Click on any wing tab to explore timing, curriculum highlights, and criteria.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2.5 mb-8" data-aos="fade-up">
+            <button onclick="switchTab('montessori')" id="tab-montessori" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-md transition">
+                Montessori Wing
+            </button>
+            <button onclick="switchTab('primary')" id="tab-primary" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
+                Primary (1-5)
+            </button>
+            <button onclick="switchTab('cambridge')" id="tab-cambridge" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
+                Cambridge & Matric
+            </button>
+            <button onclick="switchTab('hifz')" id="tab-hifz" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
+                Tahfeez-ul-Quran
+            </button>
+        </div>
+
+        <div class="straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-up">
+            <div id="content-montessori" class="tab-content grid md:grid-cols-3 gap-5">
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Daily Timings</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">8:30 AM to 12:30 PM (Mon - Thu)</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">8:30 AM to 11:30 AM (Friday)</p>
+                </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-book-open text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Curriculum Highlights</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Sensorial training, phonics, daily masnoon duas & rhymes.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-certificate text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Age Eligibility</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Playgroup: 2.5 - 3.5 Years</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">Kindergarten: 4.5 - 5.5 Years</p>
+                </div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-2.5 mb-8" data-aos="fade-up">
-                <button onclick="switchTab('montessori')" id="tab-montessori" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-md transition">
-                    Montessori Wing
-                </button>
-                <button onclick="switchTab('primary')" id="tab-primary" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
-                    Primary (1-5)
-                </button>
-                <button onclick="switchTab('cambridge')" id="tab-cambridge" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
-                    Cambridge & Matric
-                </button>
-                <button onclick="switchTab('hifz')" id="tab-hifz" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10">
-                    Tahfeez-ul-Quran
-                </button>
+            <div id="content-primary" class="tab-content hidden grid md:grid-cols-3 gap-5">
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Daily Timings</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">8:00 AM to 1:45 PM (Mon - Thu)</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">8:00 AM to 12:30 PM (Friday)</p>
+                </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-microscope text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Core Subjects</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">English Language, Science, Mathematics, Computer & Nazra.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-award text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Assessments</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Bi-monthly evaluations + Midterm & Final exams.</p>
+                </div>
             </div>
 
-            <div class="straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-up">
-                
-                <div id="content-montessori" class="tab-content grid md:grid-cols-3 gap-5">
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Daily Timings</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">8:30 AM to 12:30 PM (Mon - Thu)</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300">8:30 AM to 11:30 AM (Friday)</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-book-open text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Curriculum Highlights</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Sensorial training, phonics, daily masnoon duas & rhymes.</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-certificate text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Age Eligibility</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Playgroup: 2.5 - 3.5 Years</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300">Kindergarten: 4.5 - 5.5 Years</p>
-                    </div>
+            <div id="content-cambridge" class="tab-content hidden grid md:grid-cols-3 gap-5">
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Timings & Tests</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">8:00 AM to 2:00 PM</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">Saturday practical lab slots.</p>
                 </div>
-
-                <div id="content-primary" class="tab-content hidden grid md:grid-cols-3 gap-5">
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Daily Timings</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">8:00 AM to 1:45 PM (Mon - Thu)</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300">8:00 AM to 12:30 PM (Friday)</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-microscope text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Core Subjects</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">English Language, Science, Mathematics, Computer & Nazra.</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-award text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Assessments</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Bi-monthly evaluations + Midterm & Final exams.</p>
-                    </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-atom text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Science Practicals</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Hands-on chemistry, biology & physics journal preparation.</p>
                 </div>
-
-                <div id="content-cambridge" class="tab-content hidden grid md:grid-cols-3 gap-5">
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Timings & Tests</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">8:00 AM to 2:00 PM</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300">Saturday practical lab slots.</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-atom text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Science Practicals</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Hands-on chemistry, biology & physics journal preparation.</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-hand-holding-dollar text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Scholarships</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Up to 50% tuition waiver for 85%+ scorers in merit tests.</p>
-                    </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-hand-holding-dollar text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Scholarships</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Up to 50% tuition waiver for 85%+ scorers in merit tests.</p>
                 </div>
+            </div>
 
-                <div id="content-hifz" class="tab-content hidden grid md:grid-cols-3 gap-5">
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-mosque text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Venue & Spiritual Care</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Conducted inside on-campus mosque with certified Qaris.</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-book-quran text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Dual Track</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Daily Sabaq & Manzil along with regular English & Math periods.</p>
-                    </div>
-                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                        <i class="fa-solid fa-star-and-crescent text-red-600 text-xl mb-2"></i>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white">Sanad Award</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Formal Dastaar-bandi & certificate on complete memorization.</p>
-                    </div>
+            <div id="content-hifz" class="tab-content hidden grid md:grid-cols-3 gap-5">
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-mosque text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Venue & Spiritual Care</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Conducted inside on-campus mosque with certified Qaris.</p>
                 </div>
-
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-book-quran text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Dual Track</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Daily Sabaq & Manzil along with regular English & Math periods.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
+                    <i class="fa-solid fa-star-and-crescent text-red-600 text-xl mb-2"></i>
+                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Sanad Award</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Formal Dastaar-bandi & certificate on complete memorization.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -602,7 +552,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            
             <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md" data-aos="fade-up">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" alt="Classroom" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
@@ -632,7 +581,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -648,12 +596,9 @@
             </div>
 
             <div class="grid lg:grid-cols-12 gap-6 items-stretch">
-                
                 <div class="lg:col-span-4 straight-card bg-white dark:bg-[#111722] p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10 flex flex-col justify-between space-y-5" data-aos="fade-right">
                     <div>
-                        <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded">
-                            Main Campus
-                        </span>
+                        <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded">Main Campus</span>
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading mt-2.5">Hazrat Shah Jahangir Academy</h3>
                         <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                             Conveniently located in Alamgir Society with direct access from Mehran Depot Road and Model Colony.
@@ -685,23 +630,14 @@
                 </div>
 
                 <div class="lg:col-span-8 straight-card bg-white dark:bg-[#111722] rounded-2xl overflow-hidden h-[360px] lg:h-full min-h-[340px] relative shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-left">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Hazrat%20Shah%20Jahangir%20Academy%20Alamgir%20Society%20Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Hazrat Shah Jahangir Academy Location Map">
+                    <iframe src="https://maps.google.com/maps?q=Hazrat%20Shah%20Jahangir%20Academy%20Alamgir%20Society%20Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map">
                     </iframe>
-
                     <div class="absolute top-4 right-4 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-md border border-red-500/30 text-slate-900 dark:text-white px-3 py-1 rounded-xl text-xs font-bold shadow-xl hidden sm:flex items-center gap-1.5">
                         <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
                         <span>HSJA Verified Location</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -754,7 +690,6 @@
     <section id="admission" class="py-20 bg-slate-50 dark:bg-[#0B0F17] relative overflow-hidden transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                
                 <div class="lg:col-span-5 space-y-4" data-aos="fade-right">
                     <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
                         Admissions Open
@@ -775,7 +710,6 @@
                     </div>
                 </div>
 
-                <!-- Form Card -->
                 <div class="lg:col-span-7 straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-left">
                     <h3 class="text-xl font-black text-slate-900 dark:text-white font-heading">Admission Application</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Enter candidate details for immediate interview schedule.</p>
@@ -784,7 +718,7 @@
                         <div class="grid sm:grid-cols-2 gap-3.5">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Student Full Name *</label>
-                                <input type="text" id="formStudentName" required placeholder="Muhammad Ali" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-red-600 text-sm">
+                                <input type="text" required placeholder="Muhammad Ali" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-red-600 text-sm">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent's WhatsApp No *</label>
@@ -794,7 +728,7 @@
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Applying For *</label>
-                            <select id="formProgramSelect" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-red-600 text-sm">
+                            <select required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-red-600 text-sm">
                                 <option value="">Select Wing</option>
                                 <option value="Montessori">Montessori / Kindergarten</option>
                                 <option value="Primary">Primary School (Grades 1-5)</option>
@@ -813,7 +747,6 @@
                         🎉 JazakAllah! Inquiry receive ho chuki hai. HSJA desk aap se rabta karega.
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -830,10 +763,10 @@
             <div>
                 <h5 class="text-white font-bold uppercase tracking-wider mb-2.5">Academic Wings</h5>
                 <ul class="space-y-1.5">
-                    <li><a href="#programs" class="hover:text-red-400">Tahfeez-ul-Quran</a></li>
-                    <li><a href="#programs" class="hover:text-red-400">Montessori Pre-School</a></li>
-                    <li><a href="#programs" class="hover:text-red-400">Cambridge Junior Track</a></li>
-                    <li><a href="#programs" class="hover:text-red-400">Matriculation Board</a></li>
+                    <li><a href="programs.html#hifz" class="hover:text-red-400">Tahfeez-ul-Quran</a></li>
+                    <li><a href="programs.html#montessori" class="hover:text-red-400">Montessori Pre-School</a></li>
+                    <li><a href="programs.html#cambridge" class="hover:text-red-400">Cambridge Junior Track</a></li>
+                    <li><a href="programs.html#matric" class="hover:text-red-400">Matriculation Board</a></li>
                 </ul>
             </div>
             <div>
@@ -856,394 +789,20 @@
         </div>
     </footer>
 
-    <!-- ================= FLOATING BUTTONS ================= -->
-    <div style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 999999 !important; display: flex !important; flex-direction: column !important; align-items: center !important; gap: 10px !important;">
-        
-        <button id="backToTop" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" 
-                style="width: 44px !important; height: 44px !important; border-radius: 50% !important; background-color: #ffffff !important; border: 2px solid #dc2626 !important; color: #dc2626 !important; font-size: 16px !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 15px rgba(0,0,0,0.25) !important; transition: transform 0.2s !important;"
-                onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <!-- Floating Actions (WhatsApp & Back to Top) -->
+    <div class="hsja-floating-container">
+        <button id="backToTop" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" class="hsja-top-btn">
             <i class="fa-solid fa-arrow-up"></i>
         </button>
-
-        <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." 
-           target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" 
-           style="width: 52px !important; height: 52px !important; border-radius: 50% !important; background-color: #25d366 !important; color: #ffffff !important; font-size: 28px !important; text-decoration: none !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 20px rgba(37,211,102,0.5) !important; transition: transform 0.2s !important;"
-           onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" class="hsja-whatsapp-btn">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        
-    </div>
-
-    <!-- ================= 100% MOBILE-FIT PROGRAM DETAILS MODAL ================= -->
-    <div id="programModal" class="fixed inset-0 z-[100000] hidden flex items-center justify-center p-3 sm:p-5 bg-black/80 modal-backdrop transition-opacity duration-300">
-        
-        <!-- Modal Dialog Box (Guaranteed 100% Viewport Fit) -->
-        <div class="relative w-full max-w-lg bg-white dark:bg-[#111722] rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden max-h-[88vh] flex flex-col my-auto transform transition-all duration-300 scale-95" id="modalBox">
-            
-            <!-- Modal Header -->
-            <div class="p-3.5 sm:p-5 border-b border-slate-100 dark:border-white/10 flex items-center justify-between gap-3 bg-slate-50/70 dark:bg-[#0E1520] shrink-0">
-                <div class="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
-                    <div id="modalIconContainer" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 dark:bg-red-950/60 text-red-600 flex items-center justify-center text-xl shadow-sm shrink-0">
-                        <i id="modalIcon" class="fa-solid fa-quran"></i>
-                    </div>
-                    <div class="min-w-0">
-                        <span id="modalCategory" class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-red-600 block truncate">Spiritual Wing</span>
-                        <h3 id="modalTitle" class="text-base sm:text-xl font-black text-slate-900 dark:text-white font-heading leading-tight truncate">Tahfeez-ul-Quran</h3>
-                    </div>
-                </div>
-                <!-- Close Button (Always visible on mobile) -->
-                <button onclick="closeProgramModal()" class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-slate-200/80 dark:bg-white/10 text-slate-700 dark:text-slate-200 hover:text-red-600 flex items-center justify-center text-sm transition shrink-0 ml-2">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Modal Scrollable Content -->
-            <div class="p-4 sm:p-5 overflow-y-auto space-y-4 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                
-                <!-- Main Description -->
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm mb-1.5 flex items-center gap-2">
-                        <i class="fa-solid fa-circle-info text-red-600"></i> Program Overview
-                    </h4>
-                    <p id="modalDescription" class="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px] sm:text-xs"></p>
-                </div>
-
-                <!-- Feature Highlights (Single column on mobile to never squish) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="modalHighlights">
-                    <!-- Populated dynamically via JS -->
-                </div>
-
-                <!-- Academic Structure & Daily Routine -->
-                <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-list-check text-red-600"></i> Key Offerings & Facilities
-                    </h4>
-                    <ul id="modalList" class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 dark:text-slate-300">
-                        <!-- Populated dynamically via JS -->
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- Modal Footer (Stacked Buttons on Mobile so Nothing Cuts Off) -->
-            <div class="p-3 sm:p-4 border-t border-slate-100 dark:border-white/10 bg-slate-50 dark:bg-[#0B0F17] flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-2 shrink-0">
-                <button onclick="closeProgramModal()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 font-bold text-xs hover:bg-slate-100 dark:hover:bg-white/5 transition text-center">
-                    Close Details
-                </button>
-                <button id="modalApplyBtn" onclick="applyFromModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-md shadow-red-600/30 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Apply for this Wing</span>
-                </button>
-            </div>
-
-        </div>
     </div>
 
     <!-- AOS JS CDN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // 1. AOS Initialized with repeat & bidirectional animations (both up & down)
-        AOS.init({
-            duration: 700,
-            easing: 'ease-out-cubic',
-            once: false,
-            mirror: true,
-            offset: 80
-        });
 
-        // 2. Light / Dark Mode Toggle Functionality (Navbar Switch)
-        const themeBtnDesktop = document.getElementById('themeToggleBtn');
-        const themeBtnMobile = document.getElementById('themeToggleMobile');
-        const themeIconDesktop = document.getElementById('themeIcon');
-        const themeIconMobile = document.getElementById('themeIconMobile');
-        const backBtn = document.getElementById('backToTop');
-        const htmlElement = document.documentElement;
-
-        function updateThemeUI(isDark) {
-            if (isDark) {
-                htmlElement.classList.add('dark');
-                if (themeIconDesktop) { themeIconDesktop.className = 'fa-solid fa-sun'; }
-                if (themeIconMobile) { themeIconMobile.className = 'fa-solid fa-sun'; }
-                if (backBtn) {
-                    backBtn.style.backgroundColor = '#111722';
-                    backBtn.style.color = '#f87171';
-                }
-            } else {
-                htmlElement.classList.remove('dark');
-                if (themeIconDesktop) { themeIconDesktop.className = 'fa-solid fa-moon'; }
-                if (themeIconMobile) { themeIconMobile.className = 'fa-solid fa-moon'; }
-                if (backBtn) {
-                    backBtn.style.backgroundColor = '#ffffff';
-                    backBtn.style.color = '#dc2626';
-                }
-            }
-        }
-
-        const savedTheme = localStorage.getItem('hsja_theme') || 'light';
-        updateThemeUI(savedTheme === 'dark');
-
-        function toggleTheme() {
-            const isDarkNow = !htmlElement.classList.contains('dark');
-            updateThemeUI(isDarkNow);
-            localStorage.setItem('hsja_theme', isDarkNow ? 'dark' : 'light');
-        }
-
-        if (themeBtnDesktop) { themeBtnDesktop.addEventListener('click', toggleTheme); }
-        if (themeBtnMobile) { themeBtnMobile.addEventListener('click', toggleTheme); }
-
-        // 3. Top Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scrollProgressBar').style.width = scrolled + '%';
-        });
-
-        // 4. Program Tabs Switcher
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = 'tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10';
-            });
-            document.getElementById('tab-' + tabName).className = 'tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-md transition';
-
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.add('hidden');
-            });
-            document.getElementById('content-' + tabName).classList.remove('hidden');
-        }
-
-        // 5. FAQs Accordion Toggle
-        function toggleFaq(id) {
-            const ans = document.getElementById('faq-ans-' + id);
-            const icon = document.getElementById('faq-icon-' + id);
-            ans.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
-
-        // 6. Mobile Menu Auto-close & Manual toggle
-        const menuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-
-        function closeMobileDrawer() {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa-bars');
-        }
-
-        menuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.toggle('hidden');
-            if (isHidden) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
-        });
-
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMobileDrawer();
-            });
-        });
-
-        // ================= 7. DYNAMIC INTERACTIVE CARDS DETAILS (MODAL) =================
-        const programsData = {
-            hifz: {
-                category: "Spiritual Wing",
-                title: "Tahfeez-ul-Quran & Nazra",
-                icon: "fa-solid fa-quran",
-                selectValue: "Hifz",
-                desc: "Hazrat Shah Jahangir Academy provides a dedicated full-time Nazra and Hifz-ul-Quran curriculum conducted inside the on-campus mosque. Under the close mentorship of Sanad-certified Qaris, students memorize the Holy Quran with correct Tajweed rules while continuing their core English, Mathematics, and Urdu subjects.",
-                highlights: [
-                    { title: "Campus Mosque Venue", desc: "Spiritual learning atmosphere in the school's own mosque." },
-                    { title: "Regular Namaz Practice", desc: "Students from Class 3 onwards observe 5 daily prayers in Jama'at." },
-                    { title: "Daily Sabaq & Manzil", desc: "Structured revision cycles ensuring permanent retention." },
-                    { title: "Dual Stream Balance", desc: "Zero loss of academic syllabus during Hifz tenure." }
-                ],
-                points: [
-                    "Individual student pacing guided by experienced Qaris.",
-                    "Annual Dastaar-bandi graduation ceremony with formal Sanad.",
-                    "Continuous character grooming (Tarbiyah) and moral discipline."
-                ]
-            },
-            montessori: {
-                category: "Early Childhood (Ages 2.5 - 5.5)",
-                title: "Montessori Pre-School Wing",
-                icon: "fa-solid fa-shapes",
-                selectValue: "Montessori",
-                desc: "Our Early Years Montessori program is designed to develop early cognitive thinking, social communication, and sensory motor coordination. Children learn in bright, air-conditioned, child-friendly classrooms using genuine sensorial apparatus and phonics methodology.",
-                highlights: [
-                    { title: "Playgroup to Prep", desc: "Carefully structured for ages 2.5 up to 5.5 years." },
-                    { title: "Jolly Phonics English", desc: "Early reading, vocabulary, and natural spoken articulation." },
-                    { title: "Sensorial Development", desc: "Hands-on wooden kits for counting, patterns, and motor skills." },
-                    { title: "Masnoon Duas & Akhlaq", desc: "Daily Islamic etiquette, greetings, and short Surahs." }
-                ],
-                points: [
-                    "Loving, female-attendant supported care in every classroom.",
-                    "Playground and activity area designed for safe physical growth.",
-                    "Regular parent-teacher feedback meetings and progress reports."
-                ]
-            },
-            cambridge: {
-                category: "International Curriculum",
-                title: "Junior Cambridge Program",
-                icon: "fa-solid fa-graduation-cap",
-                selectValue: "Cambridge",
-                desc: "HSJA introduces 'Junior Cambridge' prior to O'Levels, based directly on the globally recognized Cambridge system of education. The curriculum emphasizes analytical rigor, problem-solving, English linguistic mastery, and scientific exploration.",
-                highlights: [
-                    { title: "Critical Thinking", desc: "Move beyond rote learning into conceptual understanding." },
-                    { title: "Global Opportunities", desc: "International certification standards recognized worldwide." },
-                    { title: "Advanced STEM Lab", desc: "Experimental science and practical computing integration." },
-                    { title: "Debate & Communication", desc: "Confidence building through speech and public presentations." }
-                ],
-                points: [
-                    "Specialized Subject Specialist teachers with Cambridge training.",
-                    "Comprehensive diagnostic checkpoint evaluations every term.",
-                    "Foundation track preparing students seamlessly for O-Levels / A-Levels."
-                ]
-            },
-            primary: {
-                category: "Grades 1 to 5",
-                title: "Primary School Wing",
-                icon: "fa-solid fa-book-open",
-                selectValue: "Primary",
-                desc: "The Primary Wing at HSJA builds a solid academic bedrock across all fundamental disciplines. With Oxford-aligned textbooks, conceptual mathematics, general science experiments, and Urdu literature, students develop strong study habits and curiosity.",
-                highlights: [
-                    { title: "Core Subject Mastery", desc: "Mathematics, Oxford Science, English, Urdu & Social Studies." },
-                    { title: "Computer Education", desc: "Weekly practical sessions in modern IT computer laboratory." },
-                    { title: "Moral Education & Nazra", desc: "Daily Islamic studies, Quran recitation and Seerat lessons." },
-                    { title: "Continuous Evaluation", desc: "Bi-monthly class tests and diagnostic terminal exams." }
-                ],
-                points: [
-                    "Small student-to-teacher ratio for focused individual attention.",
-                    "Interactive project-based assignments and science exhibitions.",
-                    "Special remedial classes for students requiring extra academic support."
-                ]
-            },
-            matric: {
-                category: "Sindh Board (Grades 9 & 10)",
-                title: "Secondary (Matriculation) Wing",
-                icon: "fa-solid fa-flask-vial",
-                selectValue: "Secondary",
-                desc: "Our Secondary Wing prepares students for the Board of Secondary Education Karachi (BSEK). With high-caliber science faculty, dedicated laboratories for Physics, Chemistry, and Biology, and intensive past-paper mock sessions, HSJA consistently produces top A-one grades.",
-                highlights: [
-                    { title: "Science Group Focus", desc: "Comprehensive Biology and Computer Science groups." },
-                    { title: "Equipped Science Labs", desc: "Mandatory practical experiments and journal coaching." },
-                    { title: "Exam Preparation Mock", desc: "Rigorous test series replicating official Board exams." },
-                    { title: "Merit Scholarships", desc: "Up to 50% tuition waiver for 85%+ scorers in admission test." }
-                ],
-                points: [
-                    "Consistent 100% board passing record with top A1 and A positions.",
-                    "Career counseling workshops for college and university entry tests.",
-                    "Intensive evening doubt-clearing sessions before board examinations."
-                ]
-            },
-            robotics: {
-                category: "Digital Skills & Innovation",
-                title: "Modern IT & Robotics Wing",
-                icon: "fa-solid fa-laptop-code",
-                selectValue: "Primary",
-                desc: "Equipping young Pakistani minds with 21st-century digital competencies. From basic typing speed and digital security to visual scratch coding logic, our IT wing ensures your child stays ahead in the technology revolution.",
-                highlights: [
-                    { title: "Hands-on Computer Lab", desc: "Individual terminal workstations with supervised high-speed internet." },
-                    { title: "Coding Fundamentals", desc: "Introduction to algorithmic thinking and computational logic." },
-                    { title: "Digital Citizenship", desc: "Cyber safety, typing proficiency, and office productivity tools." },
-                    { title: "Tech Exhibitions", desc: "Annual technology fair displaying creative student IT projects." }
-                ],
-                points: [
-                    "Supervised sessions led by experienced computer science teachers.",
-                    "Practical training aligned with future AI and software careers.",
-                    "Encourages innovation, design thinking, and collaborative teamwork."
-                ]
-            }
-        };
-
-        let currentActiveProgram = "";
-
-        function openProgramModal(programKey) {
-            const data = programsData[programKey];
-            if (!data) return;
-
-            currentActiveProgram = data.selectValue;
-
-            document.getElementById('modalTitle').textContent = data.title;
-            document.getElementById('modalCategory').textContent = data.category;
-            document.getElementById('modalDescription').textContent = data.desc;
-            document.getElementById('modalIcon').className = data.icon;
-
-            const highlightsContainer = document.getElementById('modalHighlights');
-            highlightsContainer.innerHTML = '';
-            data.highlights.forEach(item => {
-                const div = document.createElement('div');
-                div.className = "p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10";
-                div.innerHTML = `<h5 class="font-bold text-xs text-red-600 dark:text-red-400">${item.title}</h5><p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5 leading-snug">${item.desc}</p>`;
-                highlightsContainer.appendChild(div);
-            });
-
-            const listContainer = document.getElementById('modalList');
-            listContainer.innerHTML = '';
-            data.points.forEach(point => {
-                const li = document.createElement('li');
-                li.className = "flex items-start gap-2";
-                li.innerHTML = `<i class="fa-solid fa-circle-check text-red-600 text-xs mt-0.5 shrink-0"></i><span>${point}</span>`;
-                listContainer.appendChild(li);
-            });
-
-            const modal = document.getElementById('programModal');
-            const box = document.getElementById('modalBox');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                box.classList.remove('scale-95');
-                box.classList.add('scale-100');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProgramModal() {
-            const modal = document.getElementById('programModal');
-            const box = document.getElementById('modalBox');
-            box.classList.remove('scale-100');
-            box.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 200);
-        }
-
-        function applyFromModal() {
-            closeProgramModal();
-            setTimeout(() => {
-                const formSelect = document.getElementById('formProgramSelect');
-                if (formSelect && currentActiveProgram) {
-                    formSelect.value = currentActiveProgram;
-                }
-                const admissionSection = document.getElementById('admission');
-                if (admissionSection) {
-                    admissionSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }, 300);
-        }
-
-        document.getElementById('programModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('programModal')) {
-                closeProgramModal();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeProgramModal();
-            }
-        });
-
-        // 8. Form Submit Simulation
-        function handleForm(e) {
-            e.preventDefault();
-            document.getElementById('successBox').classList.remove('hidden');
-            e.target.reset();
-        }
-    </script>
+    <!-- LINK TO EXTERNAL JAVASCRIPT FILE -->
+    <script src="script.js"></script>
 </body>
 </html>
