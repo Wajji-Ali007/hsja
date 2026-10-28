@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Hazrat Shah Jahangir Academy (HSJA) | Karachi</title>
     
     <!-- Tailwind CSS CDN -->
@@ -11,15 +11,15 @@
     <!-- Font Awesome Icons 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS (Animate On Scroll) CSS -->
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind Configuration -->
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -46,13 +46,13 @@
     <!-- External CSS Linked -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 dark:bg-[#080C14] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-[#080C14] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white transition-colors duration-300 w-full overflow-x-hidden relative">
 
     <!-- Scroll Progress Indicator -->
     <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-400 z-[100] transition-all duration-150" style="width: 0%;"></div>
 
     <!-- Top Info Bar -->
-    <div class="bg-red-700 dark:bg-black text-white text-xs py-2 px-4 border-b border-red-800 dark:border-white/10 relative z-30 transition-colors">
+    <div class="bg-red-700 dark:bg-black text-white text-xs py-2 px-4 border-b border-red-800 dark:border-white/10 relative z-30 transition-colors w-full">
         <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
             <div class="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-red-200"></i> +92 319 4088104</span>
@@ -70,7 +70,7 @@
     </div>
 
     <!-- Main Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-sm transition-colors">
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-sm transition-colors w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -125,7 +125,7 @@
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-2xl border-t border-slate-200 dark:border-white/10 px-4 py-4 space-y-2 shadow-2xl transition-all duration-300 max-h-[82vh] overflow-y-auto">
+        <div id="mobileMenu" class="hidden lg:hidden bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-2xl border-t border-slate-200 dark:border-white/10 px-4 py-4 space-y-2 shadow-2xl transition-all duration-300 max-h-[82vh] overflow-y-auto w-full">
             <a href="#" class="mobile-nav-link mobile-tab-item flex items-center justify-between p-3 rounded-xl bg-red-50/80 dark:bg-red-950/30 border border-red-300 dark:border-red-900/60">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-xs">
@@ -203,7 +203,7 @@
     </header>
 
     <!-- Urgent Updates Ticker -->
-    <div class="bg-red-50 dark:bg-red-950/40 border-b border-red-200 dark:border-red-500/20 text-red-900 dark:text-red-300 py-2 px-4 text-xs font-semibold">
+    <div class="bg-red-50 dark:bg-red-950/40 border-b border-red-200 dark:border-red-500/20 text-red-900 dark:text-red-300 py-2 px-4 text-xs font-semibold w-full overflow-hidden">
         <div class="max-w-7xl mx-auto flex items-center overflow-hidden">
             <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full mr-3 shrink-0 shadow flex items-center gap-1.5">
                 <i class="fa-solid fa-bell"></i> Admissions Open
@@ -215,15 +215,15 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hsja-hero-bg py-12 lg:py-20 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                <div class="lg:col-span-7 space-y-5 text-center lg:text-left" data-aos="fade-right">
+    <section class="hsja-hero-bg py-12 lg:py-20 relative overflow-hidden w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full overflow-hidden">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
+                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 bg-red-100 dark:bg-red-950/60 border border-red-300 dark:border-red-500/40 px-3.5 py-1 rounded-full text-xs font-bold text-red-700 dark:text-red-300 shadow-sm">
                         <i class="fa-solid fa-crown text-red-600"></i> Leading Educational Institution in Karachi
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-heading leading-[1.1] tracking-tight text-slate-900 dark:text-white break-words">
                         Next-Gen Learning <br>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-red-800 dark:from-red-500 dark:via-rose-300 dark:to-white">
                             Deep Spiritual Roots
@@ -246,9 +246,9 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 relative" data-aos="zoom-in">
-                    <div class="straight-card relative mx-auto max-w-md rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-[#111722]">
-                        <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" alt="HSJA Classroom" class="w-full h-[380px] sm:h-[420px] object-cover">
+                <div class="lg:col-span-5 relative w-full">
+                    <div class="straight-card relative mx-auto w-full max-w-md rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-[#111722]">
+                        <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" alt="HSJA Classroom" class="w-full h-[360px] sm:h-[420px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                         <div class="absolute bottom-5 left-5 right-5 text-white">
                             <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-sm">
@@ -268,8 +268,8 @@
     </section>
 
     <!-- Stats Ribbon -->
-    <section class="relative -mt-6 z-20 max-w-6xl mx-4 sm:mx-auto" data-aos="fade-up">
-        <div class="straight-card bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-5 sm:p-7 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-white/10 shadow-lg">
+    <section class="relative -mt-6 z-20 max-w-6xl mx-auto px-4 w-full">
+        <div class="straight-card bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-5 sm:p-7 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-white/10 shadow-lg w-full">
             <div class="pt-2 sm:pt-0">
                 <span class="text-3xl sm:text-4xl font-black text-red-600 font-heading">20+</span>
                 <p class="text-xs text-slate-600 dark:text-slate-300 font-bold uppercase tracking-wider mt-1">Years of Heritage</p>
@@ -290,9 +290,9 @@
     </section>
 
     <!-- About Brief -->
-    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div class="lg:col-span-6 space-y-4" data-aos="fade-right">
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 w-full overflow-hidden">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
+            <div class="lg:col-span-6 space-y-4">
                 <span class="text-xs font-black uppercase text-red-600 bg-red-100 dark:bg-red-950/60 px-3 py-1 rounded-full">About HSJA</span>
                 <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white font-heading">
                     Inspiring Character, Faith & High Academic Eminence
@@ -306,8 +306,8 @@
                     <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-600"></i> Well-equipped Physics, Chemistry, Biology & Computer Labs.</div>
                 </div>
             </div>
-            <div class="lg:col-span-6" data-aos="fade-left">
-                <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg">
+            <div class="lg:col-span-6 w-full">
+                <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg w-full">
                     <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2257-scaled.webp" alt="Campus Life" class="w-full h-80 object-cover">
                 </div>
             </div>
@@ -315,9 +315,9 @@
     </section>
 
     <!-- Academic Programs (Cards linking cleanly to programs.html) -->
-    <section id="programs" class="py-20 bg-slate-100 dark:bg-[#0B0F17] border-y border-slate-200 dark:border-white/5 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+    <section id="programs" class="py-20 bg-slate-100 dark:bg-[#0B0F17] border-y border-slate-200 dark:border-white/5 transition-colors w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+            <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full shadow-sm">
                     Our Programs
                 </span>
@@ -325,9 +325,9 @@
                 <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Click any card below to view complete syllabus and program details on our dedicated page.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 <!-- Tahfeez Card -->
-                <a href="programs.html#hifz" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                <a href="programs.html#hifz" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between w-full">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-quran"></i>
@@ -345,7 +345,7 @@
                 </a>
 
                 <!-- Montessori Card -->
-                <a href="programs.html#montessori" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                <a href="programs.html#montessori" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between w-full">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-shapes"></i>
@@ -363,7 +363,7 @@
                 </a>
 
                 <!-- Cambridge Card -->
-                <a href="programs.html#cambridge" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                <a href="programs.html#cambridge" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between w-full">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-600/20 border border-rose-200 dark:border-rose-500/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-graduation-cap"></i>
@@ -381,7 +381,7 @@
                 </a>
 
                 <!-- Primary Wing Card -->
-                <a href="programs.html#primary" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                <a href="programs.html#primary" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between w-full">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-book-open"></i>
@@ -399,7 +399,7 @@
                 </a>
 
                 <!-- Matric Wing Card -->
-                <a href="programs.html#matric" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                <a href="programs.html#matric" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between w-full">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-700/20 border border-red-200 dark:border-red-600/40 text-red-700 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-flask-vial"></i>
@@ -417,7 +417,7 @@
                 </a>
 
                 <!-- Robotics Card -->
-                <a href="programs.html#robotics" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between" data-aos="fade-up">
+                <a href="programs.html#robotics" class="straight-card group bg-white dark:bg-[#111722] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:border-red-500 hover:shadow-xl transition-all flex flex-col justify-between w-full">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-600/20 border border-red-200 dark:border-red-500/40 text-red-600 dark:text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-laptop-code"></i>
@@ -438,8 +438,8 @@
     </section>
 
     <!-- Program & Fee Overview Tabs -->
-    <section id="structure" class="py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+    <section id="structure" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 w-full overflow-hidden">
+        <div class="text-center max-w-2xl mx-auto mb-12">
             <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
                 Transparent Info
             </span>
@@ -447,7 +447,7 @@
             <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Click on any wing tab to explore timing, curriculum highlights, and criteria.</p>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-2.5 mb-8" data-aos="fade-up">
+        <div class="flex flex-wrap justify-center gap-2.5 mb-8">
             <button onclick="switchTab('montessori')" id="tab-montessori" class="tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-md transition">
                 Montessori Wing
             </button>
@@ -462,7 +462,7 @@
             </button>
         </div>
 
-        <div class="straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-up">
+        <div class="straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10 w-full">
             <div id="content-montessori" class="tab-content grid md:grid-cols-3 gap-5">
                 <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#161F2E] border border-slate-200 dark:border-white/10">
                     <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
@@ -542,8 +542,8 @@
     </section>
 
     <!-- Campus Life Photo Gallery -->
-    <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+    <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 w-full overflow-hidden">
+        <div class="text-center max-w-2xl mx-auto mb-12">
             <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
                 Real Campus Photographs
             </span>
@@ -551,8 +551,8 @@
             <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Verified classrooms, laboratories, and student learning environments.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md" data-aos="fade-up">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md w-full">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2382-scaled.webp" alt="Classroom" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
                     <div>
@@ -562,7 +562,7 @@
                 </div>
             </div>
 
-            <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md" data-aos="fade-up">
+            <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md w-full">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2296-scaled.webp" alt="Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
                     <div>
@@ -572,7 +572,7 @@
                 </div>
             </div>
 
-            <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md" data-aos="fade-up">
+            <div class="straight-card rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 group relative h-64 shadow-md w-full">
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/11/DSC_2387-1-scaled.webp" alt="Mentorship" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-5">
                     <div>
@@ -585,9 +585,9 @@
     </section>
 
     <!-- Google Map Location -->
-    <section id="map" class="py-20 bg-slate-100 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-white/5 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+    <section id="map" class="py-20 bg-slate-100 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-white/5 transition-colors w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+            <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full shadow-sm">
                     <i class="fa-solid fa-location-dot mr-1"></i> Visit Campus
                 </span>
@@ -595,8 +595,8 @@
                 <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Easily navigate to Hazrat Shah Jahangir Academy in Karachi.</p>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-6 items-stretch">
-                <div class="lg:col-span-4 straight-card bg-white dark:bg-[#111722] p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10 flex flex-col justify-between space-y-5" data-aos="fade-right">
+            <div class="grid lg:grid-cols-12 gap-6 items-stretch w-full">
+                <div class="lg:col-span-4 straight-card bg-white dark:bg-[#111722] p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10 flex flex-col justify-between space-y-5 w-full">
                     <div>
                         <span class="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded">Main Campus</span>
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading mt-2.5">Hazrat Shah Jahangir Academy</h3>
@@ -614,7 +614,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-[#161F2E] rounded-xl border border-slate-200 dark:border-white/10">
+                        <div class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-[#161F2E] rounded-xl border border-slate-200 dark:border-white/5">
                             <i class="fa-solid fa-clock text-red-600 text-sm mt-0.5"></i>
                             <div>
                                 <strong class="text-slate-900 dark:text-white block font-bold">Visiting Hours:</strong>
@@ -629,7 +629,7 @@
                     </a>
                 </div>
 
-                <div class="lg:col-span-8 straight-card bg-white dark:bg-[#111722] rounded-2xl overflow-hidden h-[360px] lg:h-full min-h-[340px] relative shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-left">
+                <div class="lg:col-span-8 straight-card bg-white dark:bg-[#111722] rounded-2xl overflow-hidden h-[360px] lg:h-full min-h-[340px] relative shadow-xl border border-slate-200 dark:border-white/10 w-full">
                     <iframe src="https://maps.google.com/maps?q=Hazrat%20Shah%20Jahangir%20Academy%20Alamgir%20Society%20Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map">
                     </iframe>
@@ -643,16 +643,16 @@
     </section>
 
     <!-- FAQs Accordion -->
-    <section id="faqs" class="py-20 bg-white dark:bg-[#080C14] transition-colors">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12" data-aos="fade-up">
+    <section id="faqs" class="py-20 bg-white dark:bg-[#080C14] transition-colors w-full overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 w-full">
+            <div class="text-center mb-12">
                 <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
                     Got Questions?
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading mt-3">Frequently Asked Questions</h2>
             </div>
 
-            <div class="space-y-3.5" data-aos="fade-up">
+            <div class="space-y-3.5 w-full">
                 <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#111722] overflow-hidden">
                     <button onclick="toggleFaq(1)" class="w-full px-5 py-3.5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center hover:text-red-600 transition">
                         <span>Is transport facility available for distant areas?</span>
@@ -687,10 +687,10 @@
     </section>
 
     <!-- Admission Application Section -->
-    <section id="admission" class="py-20 bg-slate-50 dark:bg-[#0B0F17] relative overflow-hidden transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                <div class="lg:col-span-5 space-y-4" data-aos="fade-right">
+    <section id="admission" class="py-20 bg-slate-50 dark:bg-[#0B0F17] relative overflow-hidden transition-colors w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
+                <div class="lg:col-span-5 space-y-4">
                     <span class="text-xs font-bold uppercase tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/30 px-3.5 py-1 rounded-full">
                         Admissions Open
                     </span>
@@ -710,7 +710,7 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-7 straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10" data-aos="fade-left">
+                <div class="lg:col-span-7 straight-card bg-white dark:bg-[#111722] p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-white/10 w-full">
                     <h3 class="text-xl font-black text-slate-900 dark:text-white font-heading">Admission Application</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Enter candidate details for immediate interview schedule.</p>
 
@@ -752,7 +752,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-950 text-slate-400 text-xs pt-16 pb-8 border-t border-slate-800">
+    <footer id="contact" class="bg-slate-950 text-slate-400 text-xs pt-16 pb-8 border-t border-slate-800 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
             <div>
                 <img src="https://www.hsja.com.pk/wp-content/uploads/2024/08/hsja-logo-img.png" alt="HSJA Logo" class="h-12 w-auto mb-3 bg-white p-1.5 rounded-xl border border-red-500/30">
