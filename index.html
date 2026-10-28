@@ -43,43 +43,6 @@
     </script>
 
     <style>
-        /* ================= HARDCODED FLOATING DOCK (ALWAYS VISIBLE) ================= */
-        .hsja-permanent-dock {
-            position: fixed !important;
-            bottom: 24px !important;
-            right: 24px !important;
-            z-index: 9999999 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 12px !important;
-            pointer-events: auto !important;
-        }
-
-        .hsja-dock-btn {
-            width: 48px !important;
-            height: 48px !important;
-            border-radius: 50% !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            cursor: pointer !important;
-            transition: all 0.25s ease-in-out !important;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
-        }
-
-        .hsja-dock-btn:hover {
-            transform: scale(1.12) !important;
-        }
-
-        .hsja-dock-wa {
-            width: 56px !important;
-            height: 56px !important;
-            background-color: #25D366 !important;
-            color: #FFFFFF !important;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5) !important;
-        }
-
         /* Smooth Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -110,7 +73,7 @@
             transform: translateZ(35px);
         }
 
-        /* Glow Shadows */
+        /* Red Ambient Glows */
         .glow-red {
             box-shadow: 0 10px 30px -8px rgba(220, 38, 38, 0.25);
         }
@@ -144,31 +107,6 @@
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-brand-dark text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white transition-colors duration-300">
-
-    <!-- ================= PERMANENT FLOATING CONTROLS (ALWAYS ON TOP) ================= -->
-    <aside aria-label="Floating Controls" class="hsja-permanent-dock">
-        <!-- 1. Day / Night Mode Switch -->
-        <button id="themeToggleBtn" type="button" aria-label="Toggle Day and Night Mode" title="Switch Light/Dark Mode"
-                class="hsja-dock-btn bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 text-lg">
-            <i id="themeIcon" class="fa-solid fa-moon"></i>
-        </button>
-
-        <!-- 2. Scroll Back to Top Button -->
-        <button id="backToTop" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to Top" title="Back to Top"
-                class="hsja-dock-btn bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 text-lg">
-            <i class="fa-solid fa-arrow-up"></i>
-        </button>
-
-        <!-- 3. Direct WhatsApp Contact -->
-        <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." 
-           target="_blank" 
-           rel="noopener noreferrer"
-           aria-label="Chat on WhatsApp"
-           title="Chat with Admissions Desk" 
-           class="hsja-dock-btn hsja-dock-wa text-2xl">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-    </aside>
 
     <!-- Top Neon Scroll Progress Indicator Bar -->
     <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-400 z-[100] transition-all duration-150" style="width: 0%;"></div>
@@ -886,6 +824,33 @@
         </div>
     </footer>
 
+    <!-- ================= 100% BULLETPROOF FLOATING DOCK (ZERO AD-BLOCK RISK) ================= -->
+    <div id="hsjaFixedDock" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 2147483647 !important; display: flex !important; flex-direction: column !important; align-items: center !important; gap: 12px !important; pointer-events: auto !important;">
+        
+        <!-- 1. Day / Night Mode Switch -->
+        <button id="themeToggleBtn" type="button" title="Switch Light/Dark Mode" 
+                style="width: 50px !important; height: 50px !important; border-radius: 50% !important; background-color: #ffffff !important; border: 2.5px solid #dc2626 !important; color: #dc2626 !important; font-size: 19px !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; outline: none !important; transition: transform 0.2s !important;"
+                onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'">
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- 2. Scroll Back to Top Button -->
+        <button id="backToTop" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" 
+                style="width: 50px !important; height: 50px !important; border-radius: 50% !important; background-color: #ffffff !important; border: 2.5px solid #dc2626 !important; color: #dc2626 !important; font-size: 19px !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; outline: none !important; transition: transform 0.2s !important;"
+                onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <!-- 3. Direct WhatsApp Contact -->
+        <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." 
+           target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" 
+           style="width: 58px !important; height: 58px !important; border-radius: 50% !important; background-color: #25d366 !important; color: #ffffff !important; font-size: 32px !important; text-decoration: none !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 6px 25px rgba(37,211,102,0.6) !important; transition: transform 0.2s !important;"
+           onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+    </div>
+
     <!-- Vanilla-Tilt CDN for 3D Tilt Effect -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
@@ -901,33 +866,43 @@
             offset: 80
         });
 
-        // 2. Light / Dark Mode Toggle Functionality (with LocalStorage)
+        // 2. Light / Dark Mode Toggle Functionality (with Dynamic Button Styles)
         const themeBtn = document.getElementById('themeToggleBtn');
+        const backBtn = document.getElementById('backToTop');
         const themeIcon = document.getElementById('themeIcon');
         const htmlElement = document.documentElement;
 
-        const currentTheme = localStorage.getItem('hsja_theme') || 'light';
-        if (currentTheme === 'dark') {
-            htmlElement.classList.add('dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        } else {
-            htmlElement.classList.remove('dark');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        }
-
-        themeBtn.addEventListener('click', () => {
-            const isDark = htmlElement.classList.toggle('dark');
+        function applyThemeColors(isDark) {
             if (isDark) {
+                htmlElement.classList.add('dark');
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
-                localStorage.setItem('hsja_theme', 'dark');
+                themeBtn.style.backgroundColor = '#111722';
+                themeBtn.style.color = '#f87171';
+                themeBtn.style.borderColor = '#dc2626';
+                backBtn.style.backgroundColor = '#111722';
+                backBtn.style.color = '#f87171';
+                backBtn.style.borderColor = '#dc2626';
             } else {
+                htmlElement.classList.remove('dark');
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
-                localStorage.setItem('hsja_theme', 'light');
+                themeBtn.style.backgroundColor = '#ffffff';
+                themeBtn.style.color = '#dc2626';
+                themeBtn.style.borderColor = '#dc2626';
+                backBtn.style.backgroundColor = '#ffffff';
+                backBtn.style.color = '#dc2626';
+                backBtn.style.borderColor = '#dc2626';
             }
+        }
+
+        const currentTheme = localStorage.getItem('hsja_theme') || 'light';
+        applyThemeColors(currentTheme === 'dark');
+
+        themeBtn.addEventListener('click', () => {
+            const isNowDark = !htmlElement.classList.contains('dark');
+            applyThemeColors(isNowDark);
+            localStorage.setItem('hsja_theme', isNowDark ? 'dark' : 'light');
         });
 
         // 3. Top Scroll Progress Bar
