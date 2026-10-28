@@ -1,12 +1,13 @@
-
 // 1. AOS Scrolling Animations (Repeatable Up & Down)
-AOS.init({
-    duration: 700,
-    easing: 'ease-out-cubic',
-    once: false,       // Har baar scroll par animate hoga
-    mirror: true,      // Upar scroll karne par bhi re-animate hoga
-    offset: 80
-});
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: false,
+        mirror: true,
+        offset: 80
+    });
+}
 
 // 2. Light / Dark Mode Toggle Functionality
 const themeBtnDesktop = document.getElementById('themeToggleBtn');
@@ -19,16 +20,16 @@ const htmlElement = document.documentElement;
 function updateThemeUI(isDark) {
     if (isDark) {
         htmlElement.classList.add('dark');
-        if (themeIconDesktop) { themeIconDesktop.className = 'fa-solid fa-sun'; }
-        if (themeIconMobile) { themeIconMobile.className = 'fa-solid fa-sun'; }
+        if (themeIconDesktop) themeIconDesktop.className = 'fa-solid fa-sun';
+        if (themeIconMobile) themeIconMobile.className = 'fa-solid fa-sun';
         if (backBtn) {
             backBtn.style.backgroundColor = '#111722';
             backBtn.style.color = '#f87171';
         }
     } else {
         htmlElement.classList.remove('dark');
-        if (themeIconDesktop) { themeIconDesktop.className = 'fa-solid fa-moon'; }
-        if (themeIconMobile) { themeIconMobile.className = 'fa-solid fa-moon'; }
+        if (themeIconDesktop) themeIconDesktop.className = 'fa-solid fa-moon';
+        if (themeIconMobile) themeIconMobile.className = 'fa-solid fa-moon';
         if (backBtn) {
             backBtn.style.backgroundColor = '#ffffff';
             backBtn.style.color = '#dc2626';
@@ -36,7 +37,6 @@ function updateThemeUI(isDark) {
     }
 }
 
-// Check saved theme
 const savedTheme = localStorage.getItem('hsja_theme') || 'light';
 updateThemeUI(savedTheme === 'dark');
 
@@ -46,8 +46,8 @@ function toggleTheme() {
     localStorage.setItem('hsja_theme', isDarkNow ? 'dark' : 'light');
 }
 
-if (themeBtnDesktop) { themeBtnDesktop.addEventListener('click', toggleTheme); }
-if (themeBtnMobile) { themeBtnMobile.addEventListener('click', toggleTheme); }
+if (themeBtnDesktop) themeBtnDesktop.addEventListener('click', toggleTheme);
+if (themeBtnMobile) themeBtnMobile.addEventListener('click', toggleTheme);
 
 // 3. Top Scroll Progress Bar
 window.addEventListener('scroll', () => {
@@ -115,7 +115,6 @@ if (menuBtn && mobileMenu && menuIcon) {
     });
 }
 
-// Auto-close drawer on any link click
 document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', closeMobileDrawer);
 });
