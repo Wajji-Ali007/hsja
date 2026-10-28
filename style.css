@@ -1,3 +1,15 @@
+/* ================= PREVENT HORIZONTAL SCROLL / SLIDE ================= */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* ================= CUSTOM SCROLLBAR ================= */
 ::-webkit-scrollbar {
     width: 8px;
