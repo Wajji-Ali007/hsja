@@ -1,4 +1,3 @@
-
 /* ================= CUSTOM SCROLLBAR ================= */
 ::-webkit-scrollbar {
     width: 8px;
@@ -63,7 +62,7 @@
     box-shadow: 0 0 15px rgba(220, 38, 38, 0.4) !important;
 }
 
-/* ================= FLOATING ACTION DOCK ================= */
+/* ================= FLOATING ACTION BUTTONS ================= */
 .hsja-floating-container {
     position: fixed !important;
     bottom: 20px !important;
