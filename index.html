@@ -211,7 +211,7 @@
         </div>
     </div>
 
-    <!-- 3D Hero Section (Clean White in Light, Night Crimson in Dark) -->
+    <!-- 3D Hero Section -->
     <section class="gradient-mesh-light dark:gradient-mesh-dark py-16 lg:py-24 relative overflow-hidden transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -244,7 +244,7 @@
                     </div>
                 </div>
 
-                <!-- 3D Tilt Hero Frame with Red & White Glow -->
+                <!-- 3D Tilt Hero Frame -->
                 <div class="lg:col-span-5 relative" data-aos="zoom-in">
                     <div class="tilt-card relative mx-auto max-w-md rounded-3xl p-1 bg-gradient-to-br from-red-600/60 via-red-400/30 to-white/60 glow-red transition duration-500" 
                          data-tilt data-tilt-max="12" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
@@ -453,7 +453,6 @@
                 <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Click on any wing tab to explore timing, curriculum highlights, and criteria.</p>
             </div>
 
-            <!-- Tab Buttons in Red & White Palette -->
             <div class="flex flex-wrap justify-center gap-3 mb-8" data-aos="fade-up">
                 <button onclick="switchTab('montessori')" id="tab-montessori" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-xs bg-red-600 text-white shadow-lg shadow-red-600/30 transition">
                     Montessori Wing
@@ -469,7 +468,6 @@
                 </button>
             </div>
 
-            <!-- Tab Contents -->
             <div class="tilt-card p-1 rounded-3xl bg-gradient-to-br from-red-600/40 via-red-200 to-white dark:from-red-600/30 dark:via-white/10 dark:to-rose-600/30" data-aos="fade-up">
                 <div class="bg-white dark:bg-[#111722] p-8 sm:p-10 rounded-[22px] shadow-xl">
                     
@@ -517,7 +515,7 @@
                             <i class="fa-solid fa-clock text-red-600 text-xl mb-2"></i>
                             <h4 class="font-bold text-sm text-slate-900 dark:text-white">Timings & Tests</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">8:00 AM to 2:00 PM</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-400">Saturday special practical slots.</p>
+                            <p class="text-xs text-slate-400">Saturday special practical slots.</p>
                         </div>
                         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
                             <i class="fa-solid fa-atom text-red-600 text-xl mb-2"></i>
@@ -612,7 +610,6 @@
 
             <div class="grid lg:grid-cols-12 gap-8 items-stretch">
                 
-                <!-- Left Details Card (4 cols) -->
                 <div class="lg:col-span-4 tilt-card rounded-3xl p-[1.5px] bg-gradient-to-b from-red-600/50 to-transparent glow-red flex flex-col justify-between" data-tilt data-tilt-max="8" data-aos="fade-right">
                     <div class="bg-white dark:bg-[#111722] p-7 rounded-[22px] h-full flex flex-col justify-between space-y-6 shadow-xl border border-slate-200 dark:border-white/10">
                         <div>
@@ -658,7 +655,6 @@
                     </div>
                 </div>
 
-                <!-- Right Live Google Map (8 cols) -->
                 <div class="lg:col-span-8 rounded-3xl p-1 bg-gradient-to-br from-red-600/40 via-red-300 to-rose-600/40 glow-red" data-aos="fade-left">
                     <div class="bg-white dark:bg-[#111722] rounded-[22px] overflow-hidden h-[450px] lg:h-full min-h-[420px] relative shadow-2xl border border-slate-200 dark:border-white/10">
                         <iframe 
@@ -719,7 +715,7 @@
                         <span>Can a student do Hifz along with regular academics?</span>
                         <i id="faq-icon-3" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-3" class="hidden px-6 pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-white/5 pt-3">
+                    <div id="faq-ans-2" class="hidden px-6 pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-white/5 pt-3">
                         Yes, our Tahfeez-ul-Quran stream is specially tailored so that students never fall behind in English and Mathematics while committing the Holy Quran to memory.
                     </div>
                 </div>
@@ -836,24 +832,30 @@
         </div>
     </footer>
 
-    <!-- ================= FLOATING STACK (BOTTOM-RIGHT) ================= -->
-    
-    <!-- 1. Top of Stack: Light / Dark Mode Toggle Button (fixed bottom-40 right-6) -->
-    <button id="themeToggleBtn" aria-label="Toggle Theme" class="fixed bottom-40 right-6 z-50 bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-lg hover:scale-110 transition duration-300 glow-red">
-        <i id="themeIcon" class="fa-solid fa-moon"></i>
-    </button>
+    <!-- ================= PERMANENT FLOATING DOCK (ALWAYS VISIBLE z-[9999]) ================= -->
+    <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-3 select-none">
+        
+        <!-- 1. Light / Dark Mode Toggle (Always Visible) -->
+        <button id="themeToggleBtn" aria-label="Toggle Light Dark Theme" title="Switch Day/Night Mode" 
+                class="w-12 h-12 rounded-full bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 shadow-2xl flex items-center justify-center text-lg hover:scale-110 active:scale-95 transition duration-300 glow-red">
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
 
-    <!-- 2. Middle of Stack: Back to Top Arrow Button (fixed bottom-24 right-6) -->
-    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hidden fixed bottom-24 right-6 z-50 bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-lg hover:scale-110 transition duration-300 glow-red">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+        <!-- 2. Back To Top Arrow (Always Visible) -->
+        <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top" 
+                class="w-12 h-12 rounded-full bg-white dark:bg-[#111722] border-2 border-red-600 text-red-600 dark:text-red-400 shadow-2xl flex items-center justify-center text-lg hover:scale-110 active:scale-95 transition duration-300 glow-red">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
 
-    <!-- 3. Bottom of Stack: Official WhatsApp Floating Button (fixed bottom-6 right-6) -->
-    <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." 
-       target="_blank" 
-       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-[0_0_25px_rgba(37,211,102,0.6)] flex items-center justify-center text-3xl hover:scale-110 transition duration-300">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+        <!-- 3. WhatsApp Direct Chat Button (Always Visible) -->
+        <a href="https://wa.me/923194088104?text=Assalam%20o%20Alaikum,%20I%20want%20details%20about%20HSJA%20Admissions." 
+           target="_blank" 
+           title="Chat with Admissions Desk" 
+           class="w-14 h-14 rounded-full bg-[#25D366] hover:bg-emerald-600 text-white shadow-[0_0_25px_rgba(37,211,102,0.6)] flex items-center justify-center text-3xl hover:scale-110 active:scale-95 transition duration-300">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+    </div>
 
     <!-- Vanilla-Tilt CDN for 3D Tilt Effect -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
@@ -900,19 +902,12 @@
             }
         });
 
-        // 3. Top Scroll Progress Bar & Back to top button
+        // 3. Top Scroll Progress Bar
         window.addEventListener('scroll', () => {
             const winScroll = document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById('scrollProgressBar').style.width = scrolled + '%';
-
-            const backBtn = document.getElementById('backToTop');
-            if (winScroll > 350) {
-                backBtn.classList.remove('hidden');
-            } else {
-                backBtn.classList.add('hidden');
-            }
         });
 
         // 4. Program Tabs Switcher
