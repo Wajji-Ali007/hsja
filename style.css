@@ -1,5 +1,5 @@
-/* ================= PREVENT HORIZONTAL SCROLL / SLIDE ================= */
-html, body {
+/* ================= GLOBAL OVERFLOW LOCK ================= */
+body {
     overflow-x: hidden !important;
     max-width: 100% !important;
     width: 100% !important;
@@ -25,7 +25,7 @@ html, body {
     border-radius: 4px;
 }
 
-/* ================= HERO BACKGROUND WITH 100% CONTRAST ================= */
+/* ================= HERO SECTION BACKGROUND ================= */
 .hsja-hero-bg {
     background-color: #FFFFFF !important;
     background-image: 
@@ -64,7 +64,7 @@ html, body {
     box-shadow: 0 18px 45px -5px rgba(220, 38, 38, 0.55);
 }
 
-/* ================= MOBILE RED GLOW TABS ================= */
+/* ================= MOBILE NAVIGATION TABS ================= */
 .mobile-tab-item {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
