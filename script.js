@@ -1,15 +1,18 @@
-// 1. AOS Scrolling Animations (Repeatable Up & Down)
-if (typeof AOS !== 'undefined') {
-    AOS.init({
-        duration: 700,
-        easing: 'ease-out-cubic',
-        once: false,
-        mirror: true,
-        offset: 80
-    });
-}
+// 1. Initialize AOS Animations with Mobile Support
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true,
+            offset: 50,
+            disable: false
+        });
+    }
+});
 
-// 2. Light / Dark Mode Toggle Functionality
+// 2. Light / Dark Theme Switcher
 const themeBtnDesktop = document.getElementById('themeToggleBtn');
 const themeBtnMobile = document.getElementById('themeToggleMobile');
 const themeIconDesktop = document.getElementById('themeIcon');
@@ -49,7 +52,7 @@ function toggleTheme() {
 if (themeBtnDesktop) themeBtnDesktop.addEventListener('click', toggleTheme);
 if (themeBtnMobile) themeBtnMobile.addEventListener('click', toggleTheme);
 
-// 3. Top Scroll Progress Bar
+// 3. Scroll Progress Bar
 window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -60,7 +63,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 4. Program Tabs Switcher (Fee & Timings Section)
+// 4. Academic Program Tabs Switcher
 function switchTab(tabName) {
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.className = 'tab-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-white/10 transition border border-slate-200 dark:border-white/10';
@@ -79,7 +82,7 @@ function switchTab(tabName) {
     }
 }
 
-// 5. FAQs Accordion Toggle
+// 5. FAQ Accordion Toggle
 function toggleFaq(id) {
     const ans = document.getElementById('faq-ans-' + id);
     const icon = document.getElementById('faq-icon-' + id);
@@ -119,7 +122,7 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', closeMobileDrawer);
 });
 
-// 7. Form Submit Simulation
+// 7. Admission Form Handler
 function handleForm(e) {
     e.preventDefault();
     const successBox = document.getElementById('successBox');
